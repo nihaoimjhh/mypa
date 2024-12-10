@@ -3,6 +3,7 @@
 // See Vysyx_24090003_cpu.h for the primary calling header
 
 #include "verilated.h"
+#include "verilated_dpi.h"
 
 #include "Vysyx_24090003_cpu___024root.h"
 
@@ -51,7 +52,7 @@ VL_ATTR_COLD void Vysyx_24090003_cpu___024root___eval_settle(Vysyx_24090003_cpu_
 #ifdef VL_DEBUG
                 Vysyx_24090003_cpu___024root___dump_triggers__stl(vlSelf);
 #endif
-                VL_FATAL_MT("/home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_cpu.v", 2, "", "Settle region did not converge.");
+                VL_FATAL_MT("/home/jinghanhui/mypa/npc/vsrc/ysyx_24090003_cpu.v", 2, "", "Settle region did not converge.");
             }
             vlSelf->__VstlIterCount = ((IData)(1U) 
                                        + vlSelf->__VstlIterCount);
@@ -75,18 +76,34 @@ VL_ATTR_COLD void Vysyx_24090003_cpu___024root___dump_triggers__stl(Vysyx_240900
 }
 #endif  // VL_DEBUG
 
+void Vysyx_24090003_cpu___024root____Vdpiimwrap_ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__finish_simulation_TOP();
+
 VL_ATTR_COLD void Vysyx_24090003_cpu___024root___stl_sequent__TOP__0(Vysyx_24090003_cpu___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vysyx_24090003_cpu__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_24090003_cpu___024root___stl_sequent__TOP__0\n"); );
     // Body
+    if ((IData)((0x73U == (0x707fU & vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__inst_r)))) {
+        Vysyx_24090003_cpu___024root____Vdpiimwrap_ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__finish_simulation_TOP();
+    }
     vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__reg_write_data_enable_r 
         = (IData)((0x13U == (0x707fU & vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__inst_r)));
     if ((0x13U == (0x7fU & vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__inst_r))) {
         if ((0U == (7U & (vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__inst_r 
                           >> 0xcU)))) {
+            vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__operand2_r 
+                = (((0x13U == (0x7fU & vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__inst_r))
+                     ? 1U : 0U) ? (((- (IData)((vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__inst_r 
+                                                >> 0x1fU))) 
+                                    << 0xcU) | (vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__inst_r 
+                                                >> 0x14U))
+                    : 1U);
             vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__alu_control = 0U;
+        } else {
+            vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__operand2_r = 0U;
         }
+    } else {
+        vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__operand2_r = 0U;
     }
     vlSelf->npc = vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__npc_r;
 }
@@ -163,10 +180,11 @@ VL_ATTR_COLD void Vysyx_24090003_cpu___024root___ctor_var_reset(Vysyx_24090003_c
     vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__npc_r = 0;
     vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__spc_r = 0;
     vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__inst_r = 0;
+    vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__operand2_r = 0;
     vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__alu_control = 0;
     vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__reg_write_data_enable_r = 0;
     for (int __Vi0 = 0; __Vi0 < 32; ++__Vi0) {
-        vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_regcontrol__DOT__registers[__Vi0] = 0;
+        vlSelf->ysyx_24090003_cpu__DOT__ysyx_24090003_regcontrol__DOT__gpr[__Vi0] = 0;
     }
     vlSelf->__Vdly__ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__npc_r = 0;
     vlSelf->__Vtrigrprev__TOP__cpu_clk = 0;

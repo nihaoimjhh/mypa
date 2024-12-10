@@ -3,10 +3,10 @@
 May 22 2024
 18:54:44
 /home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_ALU.v,1733835279,verilog,,,,ysyx_24090003_ALU,,,,,,,,
-/home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_EXU.v,1733835278,verilog,,,,ysyx_24090003_EXU,,,,,,,,
+/home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_EXU.v,1733839794,verilog,,,,ysyx_24090003_EXU,,,,,,,,
 /home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_IDU.v,1733835036,verilog,,,,ysyx_24090003_IDU,,,,,,,,
 /home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_IFU.v,1733835034,verilog,,,,ysyx_24090003_IFU,,,,,,,,
-/home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_ITF.v,1733835032,verilog,,,,ysyx_24090003_ITF,,,,,,,,
-/home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_ImmT.v,1733835033,verilog,,,,ysyx_24090003_ImmT,,,,,,,,
+/home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_ITF.v,1733840466,verilog,,,,ysyx_24090003_ITF,,,,,,,,
+/home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_ImmT.v,1733840525,verilog,,,,ysyx_24090003_ImmT,,,,,,,,
 /home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_cpu.v,1733835280,verilog,,,,ysyx_24090003_cpu,,,,,,,,
-/home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_regcontrol.v,1733835031,verilog,,,,ysyx_24090003_regcontrol,,,,,,,,
+/home/jinghanhui/ysyx-workbench/npc/vsrc/ysyx_24090003_regcontrol.v,1733837218,verilog,,,,ysyx_24090003_regcontrol,,,,,,,,

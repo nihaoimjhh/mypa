@@ -36,10 +36,11 @@ class Vysyx_24090003_cpu___024root final : public VerilatedModule {
     IData/*31:0*/ ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__npc_r;
     IData/*31:0*/ ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__spc_r;
     IData/*31:0*/ ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__inst_r;
+    IData/*31:0*/ ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__operand2_r;
     IData/*31:0*/ __Vdly__ysyx_24090003_cpu__DOT__ysyx_24090003_IFU__DOT__npc_r;
     IData/*31:0*/ __VstlIterCount;
     IData/*31:0*/ __VactIterCount;
-    VlUnpacked<IData/*31:0*/, 32> ysyx_24090003_cpu__DOT__ysyx_24090003_regcontrol__DOT__registers;
+    VlUnpacked<IData/*31:0*/, 32> ysyx_24090003_cpu__DOT__ysyx_24090003_regcontrol__DOT__gpr;
     VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
     VlTriggerVec<1> __VstlTriggered;
     VlTriggerVec<2> __VactTriggered;

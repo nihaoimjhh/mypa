@@ -9,6 +9,7 @@
 #define VERILATED_VYSYX_24090003_CPU_H_  // guard
 
 #include "verilated.h"
+#include "svdpi.h"
 
 class Vysyx_24090003_cpu__Syms;
 class Vysyx_24090003_cpu___024root;

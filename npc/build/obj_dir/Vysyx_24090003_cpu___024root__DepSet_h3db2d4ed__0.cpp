@@ -3,9 +3,18 @@
 // See Vysyx_24090003_cpu.h for the primary calling header
 
 #include "verilated.h"
+#include "verilated_dpi.h"
 
 #include "Vysyx_24090003_cpu__Syms.h"
 #include "Vysyx_24090003_cpu___024root.h"
+
+extern "C" void finish_simulation();
+
+VL_INLINE_OPT void Vysyx_24090003_cpu___024root____Vdpiimwrap_ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__finish_simulation_TOP() {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vysyx_24090003_cpu___024root____Vdpiimwrap_ysyx_24090003_cpu__DOT__ysyx_24090003_EXU__DOT__finish_simulation_TOP\n"); );
+    // Body
+    finish_simulation();
+}
 
 #ifdef VL_DEBUG
 VL_ATTR_COLD void Vysyx_24090003_cpu___024root___dump_triggers__act(Vysyx_24090003_cpu___024root* vlSelf);

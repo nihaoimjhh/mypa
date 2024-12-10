@@ -4,7 +4,7 @@
 # Execute this makefile from the object directory:
 #    make -f Vysyx_24090003_cpu.mk
 
-default: /home/jinghanhui/ysyx-workbench/npc/build/ysyx_24090003_cpu
+default: /home/jinghanhui/mypa/npc/build/ysyx_24090003_cpu
 
 ### Constants...
 # Perl executable (from $PERL)
@@ -46,7 +46,7 @@ VM_USER_CLASSES = \
 
 # User .cpp directories (from .cpp's on Verilator command line)
 VM_USER_DIR = \
-	/home/jinghanhui/ysyx-workbench/npc/csrc \
+	/home/jinghanhui/mypa/npc/csrc \
 
 
 ### Default rules...
@@ -58,11 +58,11 @@ include $(VERILATOR_ROOT)/include/verilated.mk
 ### Executable rules... (from --exe)
 VPATH += $(VM_USER_DIR)
 
-top_tb.o: /home/jinghanhui/ysyx-workbench/npc/csrc/top_tb.cpp
+top_tb.o: /home/jinghanhui/mypa/npc/csrc/top_tb.cpp
 	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
 
 ### Link rules... (from --exe)
-/home/jinghanhui/ysyx-workbench/npc/build/ysyx_24090003_cpu: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a $(VM_HIER_LIBS)
+/home/jinghanhui/mypa/npc/build/ysyx_24090003_cpu: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a $(VM_HIER_LIBS)
 	$(LINK) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) $(LIBS) $(SC_LIBS) -o $@
 
 
