@@ -1,0 +1,3523 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.44+20 (git sha1 5fb3c0b1d, clang++ 14.0.0-1ubuntu1.1 -fPIC -O3)
+
+-- Executing script file `-' --
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: /home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v
+Parsing SystemVerilog input from `/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Generating RTLIL representation for module `\add1'.
+Generating RTLIL representation for module `\add'.
+Generating RTLIL representation for module `\subtraction'.
+Generating RTLIL representation for module `\NOT'.
+Generating RTLIL representation for module `\AND'.
+Generating RTLIL representation for module `\OR'.
+Generating RTLIL representation for module `\XOR'.
+Generating RTLIL representation for module `\compare'.
+Generating RTLIL representation for module `\EQ3'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/jinghanhui/yosys-sta/scripts/../nangate45/verilog/blackbox.v
+Parsing Verilog input from `/home/jinghanhui/yosys-sta/scripts/../nangate45/verilog/blackbox.v' to AST representation.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/jinghanhui/yosys-sta/scripts/../nangate45/verilog/cells_clkgate.v
+Parsing Verilog input from `/home/jinghanhui/yosys-sta/scripts/../nangate45/verilog/cells_clkgate.v' to AST representation.
+Generating RTLIL representation for module `\OPENROAD_CLKGATE'.
+Successfully finished Verilog frontend.
+
+4. Executing SYNTH pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \EQ3
+Used module:     \compare
+Used module:     \XOR
+Used module:     \OR
+Used module:     \AND
+Used module:     \NOT
+Used module:     \subtraction
+Used module:         \add
+Used module:             \add1
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \EQ3
+Used module:     \compare
+Used module:     \XOR
+Used module:     \OR
+Used module:     \AND
+Used module:     \NOT
+Used module:     \subtraction
+Used module:         \add
+Used module:             \add1
+Removing unused module `\OPENROAD_CLKGATE'.
+Removed 1 unused modules.
+Mapping positional arguments of cell subtraction.insert_0 (add).
+Mapping positional arguments of cell add.insert_3 (add1).
+Mapping positional arguments of cell add.insert_2 (add1).
+Mapping positional arguments of cell add.insert_1 (add1).
+Mapping positional arguments of cell add.insert_0 (add1).
+Mapping positional arguments of cell top.eq3 (EQ3).
+Mapping positional arguments of cell top.c3 (compare).
+Mapping positional arguments of cell top.xor3 (XOR).
+Mapping positional arguments of cell top.or3 (OR).
+Mapping positional arguments of cell top.and3 (AND).
+Mapping positional arguments of cell top.not3 (NOT).
+Mapping positional arguments of cell top.sub3 (subtraction).
+Mapping positional arguments of cell top.add3 (add).
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EQ3.
+Optimizing module compare.
+Optimizing module XOR.
+Optimizing module OR.
+Optimizing module AND.
+Optimizing module NOT.
+Optimizing module subtraction.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module top.
+
+4.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EQ3.
+Optimizing module compare.
+Optimizing module XOR.
+Optimizing module OR.
+Optimizing module AND.
+Optimizing module NOT.
+Optimizing module subtraction.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module top.
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \top..
+Removed 16 unused cells and 57 unused wires.
+<suppressed ~28 debug messages>
+
+4.5. Executing CHECK pass (checking for obvious problems).
+Checking module AND...
+Checking module EQ3...
+Checking module NOT...
+Checking module OR...
+Checking module XOR...
+Checking module add...
+Checking module add1...
+Checking module compare...
+Checking module subtraction...
+Checking module top...
+Found and reported 0 problems.
+
+4.6. Executing OPT pass (performing simple optimizations).
+
+4.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+4.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \AND..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EQ3..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \NOT..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \OR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \XOR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \compare..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \subtraction..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \AND.
+  Optimizing cells in module \EQ3.
+  Optimizing cells in module \NOT.
+  Optimizing cells in module \OR.
+  Optimizing cells in module \XOR.
+  Optimizing cells in module \add.
+  Optimizing cells in module \add1.
+  Optimizing cells in module \compare.
+  Optimizing cells in module \subtraction.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 13 unused wires.
+<suppressed ~1 debug messages>
+
+4.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \AND..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EQ3..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \NOT..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \OR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \XOR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \compare..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \subtraction..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \AND.
+  Optimizing cells in module \EQ3.
+  Optimizing cells in module \NOT.
+  Optimizing cells in module \OR.
+  Optimizing cells in module \XOR.
+  Optimizing cells in module \add.
+  Optimizing cells in module \add1.
+  Optimizing cells in module \compare.
+  Optimizing cells in module \subtraction.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+
+4.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.6.16. Finished OPT passes. (There is nothing left to do.)
+
+4.7. Executing FSM pass (extract and optimize FSM).
+
+4.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+4.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+
+4.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \AND..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EQ3..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \NOT..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \OR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \XOR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \compare..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \subtraction..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \AND.
+  Optimizing cells in module \EQ3.
+  Optimizing cells in module \NOT.
+  Optimizing cells in module \OR.
+  Optimizing cells in module \XOR.
+  Optimizing cells in module \add.
+  Optimizing cells in module \add1.
+  Optimizing cells in module \compare.
+  Optimizing cells in module \subtraction.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+
+4.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.8.9. Finished OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 3 bits (of 4) from port B of cell subtraction.$add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:60$50 ($add).
+Removed top 1 bits (of 4) from port Y of cell subtraction.$add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:60$50 ($add).
+Removed top 1 bits (of 4) from port A of cell subtraction.$add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:60$50 ($add).
+Removed top 1 bits (of 4) from port Y of cell subtraction.$not$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:60$49 ($not).
+Removed top 1 bits (of 4) from port A of cell subtraction.$not$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:60$49 ($not).
+Removed top 1 bits (of 4) from wire subtraction.$not$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:60$49_Y.
+Removed top 1 bits (of 4) from wire subtraction.SW0s.
+Removed top 1 bits (of 4) from wire subtraction.SW2s.
+
+4.10. Executing PEEPOPT pass (run peephole optimizers).
+
+4.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+4.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module AND:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module EQ3:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module NOT:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module OR:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module XOR:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module add:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module add1:
+  creating $macc model for $add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:41$44 ($add).
+  creating $macc model for $add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:41$45 ($add).
+  merging $macc model for $add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:41$44 into $add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:41$45.
+  creating $alu model for $macc $add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:41$45.
+  creating $alu cell for $add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:41$45: $auto$alumacc.cc:485:replace_alu$110
+  created 1 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module compare:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module subtraction:
+  creating $macc model for $add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:60$50 ($add).
+  creating $alu model for $macc $add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:60$50.
+  creating $alu cell for $add$/home/jinghanhui/verilogtest/mustdo/ex3sta/vsrc/top.v:60$50: $auto$alumacc.cc:485:replace_alu$113
+  created 1 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module top:
+  created 0 $alu and 0 $macc cells.
+
+4.13. Executing SHARE pass (SAT-based resource sharing).
+
+4.14. Executing OPT pass (performing simple optimizations).
+
+4.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \AND..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EQ3..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \NOT..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \OR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \XOR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \compare..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \subtraction..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \AND.
+  Optimizing cells in module \EQ3.
+  Optimizing cells in module \NOT.
+  Optimizing cells in module \OR.
+  Optimizing cells in module \XOR.
+  Optimizing cells in module \add.
+  Optimizing cells in module \add1.
+  Optimizing cells in module \compare.
+  Optimizing cells in module \subtraction.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+4.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \AND..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EQ3..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \NOT..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \OR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \XOR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \compare..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \subtraction..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \AND.
+  Optimizing cells in module \EQ3.
+  Optimizing cells in module \NOT.
+  Optimizing cells in module \OR.
+  Optimizing cells in module \XOR.
+  Optimizing cells in module \add.
+  Optimizing cells in module \add1.
+  Optimizing cells in module \compare.
+  Optimizing cells in module \subtraction.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+
+4.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.14.16. Finished OPT passes. (There is nothing left to do.)
+
+4.15. Executing MEMORY pass.
+
+4.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+
+4.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+
+4.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+
+4.17. Executing OPT pass (performing simple optimizations).
+
+4.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+
+4.17.5. Finished fast OPT passes.
+
+4.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.19. Executing OPT pass (performing simple optimizations).
+
+4.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \AND..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EQ3..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \NOT..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \OR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \XOR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \compare..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \subtraction..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \AND.
+  Optimizing cells in module \EQ3.
+  Optimizing cells in module \NOT.
+  Optimizing cells in module \OR.
+  Optimizing cells in module \XOR.
+  Optimizing cells in module \add.
+  Optimizing cells in module \add1.
+  Optimizing cells in module \compare.
+  Optimizing cells in module \subtraction.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.19.6. Executing OPT_SHARE pass.
+
+4.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+
+4.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.19.10. Finished OPT passes. (There is nothing left to do.)
+
+4.20. Executing TECHMAP pass (map to technology primitives).
+
+4.20.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod$1d1e68f77481583066c6d429218f48ea9d5739b3\_90_alu for cells of type $alu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $logic_not.
+No more expansions possible.
+<suppressed ~428 debug messages>
+
+4.21. Executing OPT pass (performing simple optimizations).
+
+4.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+<suppressed ~9 debug messages>
+Optimizing module compare.
+Optimizing module subtraction.
+<suppressed ~19 debug messages>
+Optimizing module top.
+
+4.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+Removed 2 unused cells and 57 unused wires.
+<suppressed ~5 debug messages>
+
+4.21.5. Finished fast OPT passes.
+
+4.22. Executing ABC pass (technology mapping using ABC).
+
+4.22.1. Extracting gate netlist of module `\AND' to `<abc-temp-dir>/input.blif'..
+Extracted 4 gates and 12 wires to a netlist network with 8 inputs and 4 outputs.
+
+4.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+4.22.2. Extracting gate netlist of module `\EQ3' to `<abc-temp-dir>/input.blif'..
+Extracted 8 gates and 14 wires to a netlist network with 6 inputs and 1 outputs.
+
+4.22.2.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.2.2. Re-integrating ABC results.
+ABC RESULTS:              XNOR cells:        1
+ABC RESULTS:               XOR cells:        2
+ABC RESULTS:            ANDNOT cells:        2
+ABC RESULTS:        internal signals:        7
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        1
+Removing temp directory.
+
+4.22.3. Extracting gate netlist of module `\NOT' to `<abc-temp-dir>/input.blif'..
+Extracted 4 gates and 8 wires to a netlist network with 4 inputs and 4 outputs.
+
+4.22.3.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.3.2. Re-integrating ABC results.
+ABC RESULTS:               NOT cells:        4
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        4
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+4.22.4. Extracting gate netlist of module `\OR' to `<abc-temp-dir>/input.blif'..
+Extracted 4 gates and 12 wires to a netlist network with 8 inputs and 4 outputs.
+
+4.22.4.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.4.2. Re-integrating ABC results.
+ABC RESULTS:                OR cells:        4
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+4.22.5. Extracting gate netlist of module `\XOR' to `<abc-temp-dir>/input.blif'..
+Extracted 4 gates and 12 wires to a netlist network with 8 inputs and 4 outputs.
+
+4.22.5.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.5.2. Re-integrating ABC results.
+ABC RESULTS:               XOR cells:        4
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+4.22.6. Extracting gate netlist of module `\add' to `<abc-temp-dir>/input.blif'..
+Extracted 4 gates and 9 wires to a netlist network with 5 inputs and 2 outputs.
+
+4.22.6.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.6.2. Re-integrating ABC results.
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:               XOR cells:        1
+ABC RESULTS:        internal signals:        2
+ABC RESULTS:           input signals:        5
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+4.22.7. Extracting gate netlist of module `\add1' to `<abc-temp-dir>/input.blif'..
+Extracted 5 gates and 8 wires to a netlist network with 3 inputs and 2 outputs.
+
+4.22.7.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.7.2. Re-integrating ABC results.
+ABC RESULTS:              XNOR cells:        2
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:        internal signals:        3
+ABC RESULTS:           input signals:        3
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+4.22.8. Extracting gate netlist of module `\compare' to `<abc-temp-dir>/input.blif'..
+Extracted 28 gates and 34 wires to a netlist network with 6 inputs and 3 outputs.
+
+4.22.8.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.8.2. Re-integrating ABC results.
+ABC RESULTS:              XNOR cells:        1
+ABC RESULTS:               XOR cells:        1
+ABC RESULTS:              NAND cells:        1
+ABC RESULTS:             ORNOT cells:        4
+ABC RESULTS:            ANDNOT cells:        8
+ABC RESULTS:                OR cells:        4
+ABC RESULTS:        internal signals:       25
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        3
+Removing temp directory.
+
+4.22.9. Extracting gate netlist of module `\subtraction' to `<abc-temp-dir>/input.blif'..
+Extracted 6 gates and 9 wires to a netlist network with 3 inputs and 2 outputs.
+
+4.22.9.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.9.2. Re-integrating ABC results.
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:               XOR cells:        2
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:        3
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+4.22.10. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
+Extracted 120 gates and 179 wires to a netlist network with 59 inputs and 7 outputs.
+
+4.22.10.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.10.2. Re-integrating ABC results.
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:             ORNOT cells:        2
+ABC RESULTS:              NAND cells:        1
+ABC RESULTS:            ANDNOT cells:       56
+ABC RESULTS:                OR cells:       58
+ABC RESULTS:        internal signals:      113
+ABC RESULTS:           input signals:       59
+ABC RESULTS:          output signals:        7
+Removing temp directory.
+
+4.23. Executing OPT pass (performing simple optimizations).
+
+4.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+4.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 199 unused wires.
+<suppressed ~24 debug messages>
+
+4.23.5. Finished fast OPT passes.
+
+4.24. Executing HIERARCHY pass (managing design hierarchy).
+
+4.24.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \add
+Used module:         \add1
+Used module:     \AND
+Used module:     \compare
+Used module:     \EQ3
+Used module:     \NOT
+Used module:     \OR
+Used module:     \subtraction
+Used module:     \XOR
+
+4.24.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \add
+Used module:         \add1
+Used module:     \AND
+Used module:     \compare
+Used module:     \EQ3
+Used module:     \NOT
+Used module:     \OR
+Used module:     \subtraction
+Used module:     \XOR
+Removed 0 unused modules.
+
+4.25. Printing statistics.
+
+=== AND ===
+
+   Number of wires:                  3
+   Number of wire bits:             15
+   Number of public wires:           3
+   Number of public wire bits:      15
+   Number of ports:                  3
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $_AND_                          4
+
+=== EQ3 ===
+
+   Number of wires:                  8
+   Number of wire bits:             18
+   Number of public wires:           4
+   Number of public wire bits:      14
+   Number of ports:                  3
+   Number of port bits:             13
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $_ANDNOT_                       2
+     $_XNOR_                         1
+     $_XOR_                          2
+
+=== NOT ===
+
+   Number of wires:                  2
+   Number of wire bits:             11
+   Number of public wires:           2
+   Number of public wire bits:      11
+   Number of ports:                  2
+   Number of port bits:             11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $_NOT_                          4
+
+=== OR ===
+
+   Number of wires:                  3
+   Number of wire bits:             15
+   Number of public wires:           3
+   Number of public wire bits:      15
+   Number of ports:                  3
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $_OR_                           4
+
+=== XOR ===
+
+   Number of wires:                  3
+   Number of wire bits:             15
+   Number of public wires:           3
+   Number of public wire bits:      15
+   Number of ports:                  3
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $_XOR_                          4
+
+=== add ===
+
+   Number of wires:                 13
+   Number of wire bits:             27
+   Number of public wires:          12
+   Number of public wire bits:      26
+   Number of ports:                  3
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $_ANDNOT_                       1
+     $_NOR_                          1
+     $_XOR_                          1
+     add1                            4
+
+=== add1 ===
+
+   Number of wires:                  8
+   Number of wire bits:              8
+   Number of public wires:           5
+   Number of public wire bits:       5
+   Number of ports:                  5
+   Number of port bits:              5
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $_ANDNOT_                       1
+     $_AND_                          1
+     $_OR_                           1
+     $_XNOR_                         2
+
+=== compare ===
+
+   Number of wires:                 20
+   Number of wire bits:             30
+   Number of public wires:           4
+   Number of public wire bits:      14
+   Number of ports:                  3
+   Number of port bits:             13
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 19
+     $_ANDNOT_                       8
+     $_NAND_                         1
+     $_ORNOT_                        4
+     $_OR_                           4
+     $_XNOR_                         1
+     $_XOR_                          1
+
+=== subtraction ===
+
+   Number of wires:                  6
+   Number of wire bits:             22
+   Number of public wires:           5
+   Number of public wire bits:      21
+   Number of ports:                  3
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $_OR_                           1
+     $_XOR_                          2
+     add                             1
+
+=== top ===
+
+   Number of wires:                131
+   Number of wire bits:            241
+   Number of public wires:          20
+   Number of public wire bits:     130
+   Number of ports:                  4
+   Number of port bits:             18
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                126
+     $_ANDNOT_                      56
+     $_NAND_                         1
+     $_NOT_                          1
+     $_ORNOT_                        2
+     $_OR_                          58
+     AND                             1
+     EQ3                             1
+     NOT                             1
+     OR                              1
+     XOR                             1
+     add                             1
+     compare                         1
+     subtraction                     1
+
+=== design hierarchy ===
+
+   top                               1
+     AND                             1
+     EQ3                             1
+     NOT                             1
+     OR                              1
+     XOR                             1
+     add                             1
+       add1                          4
+     compare                         1
+     subtraction                     1
+       add                           1
+         add1                        4
+
+   Number of wires:                266
+   Number of wire bits:            485
+   Number of public wires:         108
+   Number of public wire bits:     327
+   Number of ports:                 70
+   Number of port bits:            185
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                207
+     $_ANDNOT_                      76
+     $_AND_                         12
+     $_NAND_                         2
+     $_NOR_                          2
+     $_NOT_                          5
+     $_ORNOT_                        6
+     $_OR_                          75
+     $_XNOR_                        18
+     $_XOR_                         11
+
+4.26. Executing CHECK pass (checking for obvious problems).
+Checking module AND...
+Checking module EQ3...
+Checking module NOT...
+Checking module OR...
+Checking module XOR...
+Checking module add...
+Checking module add1...
+Checking module compare...
+Checking module subtraction...
+Checking module top...
+Found and reported 0 problems.
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \AND..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EQ3..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \NOT..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \OR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \XOR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \compare..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \subtraction..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \AND.
+  Optimizing cells in module \EQ3.
+  Optimizing cells in module \NOT.
+  Optimizing cells in module \OR.
+  Optimizing cells in module \XOR.
+  Optimizing cells in module \add.
+  Optimizing cells in module \add1.
+  Optimizing cells in module \compare.
+  Optimizing cells in module \subtraction.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 10 unused wires.
+<suppressed ~10 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \AND..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EQ3..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \NOT..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \OR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \XOR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \compare..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \subtraction..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \AND.
+  Optimizing cells in module \EQ3.
+  Optimizing cells in module \NOT.
+  Optimizing cells in module \OR.
+  Optimizing cells in module \XOR.
+  Optimizing cells in module \add.
+  Optimizing cells in module \add1.
+  Optimizing cells in module \compare.
+  Optimizing cells in module \subtraction.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+5.16. Finished OPT passes. (There is nothing left to do.)
+
+6. Executing TECHMAP pass (map to technology primitives).
+
+6.1. Executing Verilog-2005 frontend: /home/jinghanhui/yosys-sta/scripts/../nangate45/verilog/cells_latch.v
+Parsing Verilog input from `/home/jinghanhui/yosys-sta/scripts/../nangate45/verilog/cells_latch.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+6.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+7. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X2' - skipping.
+  cell DFF_X1 (noninv, pins=4, area=4.52) is a direct match for cell type $_DFF_P_.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X2' - skipping.
+  cell DFFR_X1 (noninv, pins=5, area=5.32) is a direct match for cell type $_DFF_PN0_.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X2' - skipping.
+  cell DFFS_X1 (noninv, pins=5, area=5.32) is a direct match for cell type $_DFF_PN1_.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X2' - skipping.
+  cell DFFRS_X1 (noninv, pins=6, area=6.38) is a direct match for cell type $_DFFSR_PNN_.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFRS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFR_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFFS_X2' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X1' - skipping.
+Warning: Found unsupported expression 'SE*SI+D*!SE' in pin attribute of cell 'SDFF_X2' - skipping.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \DFF_X1 _DFF_P_ (.CK( C), .D( D), .Q( Q), .QN(~Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \DFFR_X1 _DFF_PN0_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .RN( R));
+    \DFFS_X1 _DFF_PN1_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .SN( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFSR_NNN_
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \DFFRS_X1 _DFFSR_PNN_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .RN( R), .SN( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+7.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\AND':
+Mapping DFF cells in module `\EQ3':
+Mapping DFF cells in module `\NOT':
+Mapping DFF cells in module `\OR':
+Mapping DFF cells in module `\XOR':
+Mapping DFF cells in module `\add':
+Mapping DFF cells in module `\add1':
+Mapping DFF cells in module `\compare':
+Mapping DFF cells in module `\subtraction':
+Mapping DFF cells in module `\top':
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \AND..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EQ3..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \NOT..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \OR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \XOR..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \add1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \compare..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \subtraction..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \AND.
+  Optimizing cells in module \EQ3.
+  Optimizing cells in module \NOT.
+  Optimizing cells in module \OR.
+  Optimizing cells in module \XOR.
+  Optimizing cells in module \add.
+  Optimizing cells in module \add1.
+  Optimizing cells in module \compare.
+  Optimizing cells in module \subtraction.
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\AND'.
+Finding identical cells in module `\EQ3'.
+Finding identical cells in module `\NOT'.
+Finding identical cells in module `\OR'.
+Finding identical cells in module `\XOR'.
+Finding identical cells in module `\add'.
+Finding identical cells in module `\add1'.
+Finding identical cells in module `\compare'.
+Finding identical cells in module `\subtraction'.
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module AND.
+Optimizing module EQ3.
+Optimizing module NOT.
+Optimizing module OR.
+Optimizing module XOR.
+Optimizing module add.
+Optimizing module add1.
+Optimizing module compare.
+Optimizing module subtraction.
+Optimizing module top.
+
+8.9. Finished OPT passes. (There is nothing left to do.)
+
+9. Executing ABC pass (technology mapping using ABC).
+
+9.1. Extracting gate netlist of module `\AND' to `/tmp/yosys-abc-8X2Pee/input.blif'..
+Extracted 4 gates and 12 wires to a netlist network with 8 inputs and 4 outputs.
+
+9.1.1. Executing ABC.
+Running ABC command: "/usr/local/bin/yosys-abc" -s -f /tmp/yosys-abc-8X2Pee/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-8X2Pee/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-8X2Pee/input.blif 
+ABC: + read_lib -w /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_1024x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_2048x39" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x34" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x95" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_32x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_512x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x15" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x21" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x7" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "nangate45_merged" from "/home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib" has 88 cells (47 skipped: 21 seq; 6 tri-state; 20 no func; 7 dont_use).  Time =     0.05 sec
+ABC: Memory =   11.42 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-8X2Pee/output.blif 
+
+9.1.2. Re-integrating ABC results.
+ABC RESULTS:           AND2_X4 cells:        4
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+9.2. Extracting gate netlist of module `\EQ3' to `/tmp/yosys-abc-4XxJOy/input.blif'..
+Extracted 5 gates and 11 wires to a netlist network with 6 inputs and 1 outputs.
+
+9.2.1. Executing ABC.
+Running ABC command: "/usr/local/bin/yosys-abc" -s -f /tmp/yosys-abc-4XxJOy/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-4XxJOy/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-4XxJOy/input.blif 
+ABC: + read_lib -w /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_1024x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_2048x39" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x34" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x95" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_32x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_512x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x15" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x21" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x7" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "nangate45_merged" from "/home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib" has 88 cells (47 skipped: 21 seq; 6 tri-state; 20 no func; 7 dont_use).  Time =     0.05 sec
+ABC: Memory =   11.42 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-4XxJOy/output.blif 
+
+9.2.2. Re-integrating ABC results.
+ABC RESULTS:          XNOR2_X2 cells:        3
+ABC RESULTS:           AND3_X1 cells:        1
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        1
+Removing temp directory.
+
+9.3. Extracting gate netlist of module `\NOT' to `/tmp/yosys-abc-mHti2t/input.blif'..
+Extracted 4 gates and 8 wires to a netlist network with 4 inputs and 4 outputs.
+
+9.3.1. Executing ABC.
+Running ABC command: "/usr/local/bin/yosys-abc" -s -f /tmp/yosys-abc-mHti2t/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-mHti2t/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-mHti2t/input.blif 
+ABC: + read_lib -w /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_1024x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_2048x39" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x34" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x95" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_32x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_512x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x15" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x21" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x7" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "nangate45_merged" from "/home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib" has 88 cells (47 skipped: 21 seq; 6 tri-state; 20 no func; 7 dont_use).  Time =     0.05 sec
+ABC: Memory =   11.42 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-mHti2t/output.blif 
+
+9.3.2. Re-integrating ABC results.
+ABC RESULTS:            INV_X1 cells:        4
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        4
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+9.4. Extracting gate netlist of module `\OR' to `/tmp/yosys-abc-LRyKI0/input.blif'..
+Extracted 4 gates and 12 wires to a netlist network with 8 inputs and 4 outputs.
+
+9.4.1. Executing ABC.
+Running ABC command: "/usr/local/bin/yosys-abc" -s -f /tmp/yosys-abc-LRyKI0/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-LRyKI0/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-LRyKI0/input.blif 
+ABC: + read_lib -w /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_1024x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_2048x39" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x34" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x95" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_32x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_512x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x15" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x21" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x7" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "nangate45_merged" from "/home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib" has 88 cells (47 skipped: 21 seq; 6 tri-state; 20 no func; 7 dont_use).  Time =     0.05 sec
+ABC: Memory =   11.42 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-LRyKI0/output.blif 
+
+9.4.2. Re-integrating ABC results.
+ABC RESULTS:            OR2_X4 cells:        4
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+9.5. Extracting gate netlist of module `\XOR' to `/tmp/yosys-abc-V8QgpQ/input.blif'..
+Extracted 4 gates and 12 wires to a netlist network with 8 inputs and 4 outputs.
+
+9.5.1. Executing ABC.
+Running ABC command: "/usr/local/bin/yosys-abc" -s -f /tmp/yosys-abc-V8QgpQ/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-V8QgpQ/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-V8QgpQ/input.blif 
+ABC: + read_lib -w /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_1024x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_2048x39" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x34" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x95" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_32x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_512x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x15" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x21" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x7" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "nangate45_merged" from "/home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib" has 88 cells (47 skipped: 21 seq; 6 tri-state; 20 no func; 7 dont_use).  Time =     0.05 sec
+ABC: Memory =   11.42 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-V8QgpQ/output.blif 
+
+9.5.2. Re-integrating ABC results.
+ABC RESULTS:           XOR2_X1 cells:        4
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+9.6. Extracting gate netlist of module `\add' to `/tmp/yosys-abc-V4qLTa/input.blif'..
+Extracted 3 gates and 8 wires to a netlist network with 5 inputs and 2 outputs.
+
+9.6.1. Executing ABC.
+Running ABC command: "/usr/local/bin/yosys-abc" -s -f /tmp/yosys-abc-V4qLTa/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-V4qLTa/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-V4qLTa/input.blif 
+ABC: + read_lib -w /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_1024x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_2048x39" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x34" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x95" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_32x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_512x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x15" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x21" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x7" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "nangate45_merged" from "/home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib" has 88 cells (47 skipped: 21 seq; 6 tri-state; 20 no func; 7 dont_use).  Time =     0.05 sec
+ABC: Memory =   11.42 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-V4qLTa/output.blif 
+
+9.6.2. Re-integrating ABC results.
+ABC RESULTS:           NOR3_X1 cells:        1
+ABC RESULTS:           XOR2_X1 cells:        1
+ABC RESULTS:        internal signals:        1
+ABC RESULTS:           input signals:        5
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+9.7. Extracting gate netlist of module `\add1' to `/tmp/yosys-abc-jjwpit/input.blif'..
+Extracted 5 gates and 8 wires to a netlist network with 3 inputs and 2 outputs.
+
+9.7.1. Executing ABC.
+Running ABC command: "/usr/local/bin/yosys-abc" -s -f /tmp/yosys-abc-jjwpit/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-jjwpit/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-jjwpit/input.blif 
+ABC: + read_lib -w /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_1024x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_2048x39" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x34" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x95" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_32x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_512x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x15" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x21" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x7" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "nangate45_merged" from "/home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib" has 88 cells (47 skipped: 21 seq; 6 tri-state; 20 no func; 7 dont_use).  Time =     0.05 sec
+ABC: Memory =   11.42 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-jjwpit/output.blif 
+
+9.7.2. Re-integrating ABC results.
+ABC RESULTS:           XOR2_X2 cells:        1
+ABC RESULTS:           XOR2_X1 cells:        1
+ABC RESULTS:          NAND2_X1 cells:        3
+ABC RESULTS:        internal signals:        3
+ABC RESULTS:           input signals:        3
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+9.8. Extracting gate netlist of module `\compare' to `/tmp/yosys-abc-bbMwbl/input.blif'..
+Extracted 19 gates and 25 wires to a netlist network with 6 inputs and 3 outputs.
+
+9.8.1. Executing ABC.
+Running ABC command: "/usr/local/bin/yosys-abc" -s -f /tmp/yosys-abc-bbMwbl/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-bbMwbl/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-bbMwbl/input.blif 
+ABC: + read_lib -w /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_1024x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_2048x39" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x34" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x95" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_32x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_512x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x15" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x21" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x7" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "nangate45_merged" from "/home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib" has 88 cells (47 skipped: 21 seq; 6 tri-state; 20 no func; 7 dont_use).  Time =     0.05 sec
+ABC: Memory =   11.42 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-bbMwbl/output.blif 
+
+9.8.2. Re-integrating ABC results.
+ABC RESULTS:           AND2_X4 cells:        1
+ABC RESULTS:           INV_X32 cells:        2
+ABC RESULTS:          AOI21_X4 cells:        1
+ABC RESULTS:           NOR2_X1 cells:        4
+ABC RESULTS:           AND2_X1 cells:        1
+ABC RESULTS:            INV_X1 cells:        3
+ABC RESULTS:           AND4_X2 cells:        1
+ABC RESULTS:          NAND2_X1 cells:        1
+ABC RESULTS:          OAI22_X1 cells:        2
+ABC RESULTS:        internal signals:       16
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        3
+Removing temp directory.
+
+9.9. Extracting gate netlist of module `\subtraction' to `/tmp/yosys-abc-AblqWD/input.blif'..
+Extracted 3 gates and 6 wires to a netlist network with 3 inputs and 2 outputs.
+
+9.9.1. Executing ABC.
+Running ABC command: "/usr/local/bin/yosys-abc" -s -f /tmp/yosys-abc-AblqWD/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-AblqWD/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-AblqWD/input.blif 
+ABC: + read_lib -w /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_1024x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_2048x39" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x34" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x95" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_32x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_512x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x15" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x21" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x7" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "nangate45_merged" from "/home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib" has 88 cells (47 skipped: 21 seq; 6 tri-state; 20 no func; 7 dont_use).  Time =     0.05 sec
+ABC: Memory =   11.42 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-AblqWD/output.blif 
+
+9.9.2. Re-integrating ABC results.
+ABC RESULTS:           XOR2_X1 cells:        1
+ABC RESULTS:           NOR2_X4 cells:        1
+ABC RESULTS:          XNOR2_X1 cells:        1
+ABC RESULTS:        internal signals:        1
+ABC RESULTS:           input signals:        3
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+9.10. Extracting gate netlist of module `\top' to `/tmp/yosys-abc-XunYJR/input.blif'..
+Extracted 118 gates and 177 wires to a netlist network with 59 inputs and 7 outputs.
+
+9.10.1. Executing ABC.
+Running ABC command: "/usr/local/bin/yosys-abc" -s -f /tmp/yosys-abc-XunYJR/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-XunYJR/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-XunYJR/input.blif 
+ABC: + read_lib -w /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_1024x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_2048x39" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x34" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x95" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_256x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_32x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_512x64" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x15" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x21" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x32" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x7" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "fakeram45_64x96" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "ANTENNA_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATETST_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "CLKGATE_X8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLH_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DLL_X2".
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "FILLCELL_X32" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC0_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "LOGIC1_X1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFRS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFR_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFFS_X2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "SDFF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF_X16".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV_X1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "TLAT_X1".
+ABC: Library "nangate45_merged" from "/home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib" has 88 cells (47 skipped: 21 seq; 6 tri-state; 20 no func; 7 dont_use).  Time =     0.05 sec
+ABC: Memory =   11.42 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "FA_X1").
+ABC: + strash 
+ABC: + ifraig 
+ABC: + retime -D -D 2000.0 -M 6 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + map -p -M 1 -D 2000.0 -f 
+ABC: + topo 
+ABC: + dnsize 
+ABC: + buffer -p 
+ABC: + upsize 
+ABC: + 
+ABC: + write_blif /tmp/yosys-abc-XunYJR/output.blif 
+
+9.10.2. Re-integrating ABC results.
+ABC RESULTS:            INV_X2 cells:        1
+ABC RESULTS:           INV_X32 cells:        2
+ABC RESULTS:           NOR2_X4 cells:        2
+ABC RESULTS:           NOR2_X1 cells:        1
+ABC RESULTS:           AND2_X2 cells:        3
+ABC RESULTS:           AND2_X4 cells:        2
+ABC RESULTS:           AND2_X1 cells:        1
+ABC RESULTS:           AND3_X1 cells:       13
+ABC RESULTS:           AND4_X1 cells:        7
+ABC RESULTS:          AOI21_X1 cells:       20
+ABC RESULTS:           AND3_X2 cells:        8
+ABC RESULTS:          AOI21_X2 cells:        8
+ABC RESULTS:          NAND4_X1 cells:        7
+ABC RESULTS:        internal signals:      111
+ABC RESULTS:           input signals:       59
+ABC RESULTS:          output signals:        7
+Removing temp directory.
+
+10. Executing HILOMAP pass (mapping to constant drivers).
+
+11. Executing SETUNDEF pass (replace undef values with defined constants).
+
+12. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+13. Executing INSBUF pass (insert buffer cells for connected wires).
+Add AND/$auto$insbuf.cc:97:execute$760: $auto$hilomap.cc:47:hilomap_worker$748 -> \ld [4]
+Add AND/$auto$insbuf.cc:97:execute$761: $auto$hilomap.cc:47:hilomap_worker$748 -> \ld [5]
+Add AND/$auto$insbuf.cc:97:execute$762: $auto$hilomap.cc:47:hilomap_worker$748 -> \ld [6]
+Add AND/$auto$insbuf.cc:97:execute$763: \SW2 [0] -> $abc$617$SW2[0]
+Add AND/$auto$insbuf.cc:97:execute$764: \SW1 [0] -> $abc$617$SW1[0]
+Add AND/$auto$insbuf.cc:97:execute$765: $abc$617$ld[0] -> \ld [0]
+Add AND/$auto$insbuf.cc:97:execute$766: \SW2 [1] -> $abc$617$SW2[1]
+Add AND/$auto$insbuf.cc:97:execute$767: \SW1 [1] -> $abc$617$SW1[1]
+Add AND/$auto$insbuf.cc:97:execute$768: $abc$617$ld[1] -> \ld [1]
+Add AND/$auto$insbuf.cc:97:execute$769: \SW2 [2] -> $abc$617$SW2[2]
+Add AND/$auto$insbuf.cc:97:execute$770: \SW1 [2] -> $abc$617$SW1[2]
+Add AND/$auto$insbuf.cc:97:execute$771: $abc$617$ld[2] -> \ld [2]
+Add AND/$auto$insbuf.cc:97:execute$772: \SW2 [3] -> $abc$617$SW2[3]
+Add AND/$auto$insbuf.cc:97:execute$773: \SW1 [3] -> $abc$617$SW1[3]
+Add AND/$auto$insbuf.cc:97:execute$774: $abc$617$ld[3] -> \ld [3]
+Add EQ3/$auto$insbuf.cc:97:execute$775: \eq0 -> \LD [0]
+Add EQ3/$auto$insbuf.cc:97:execute$776: \eq0 -> \LD [1]
+Add EQ3/$auto$insbuf.cc:97:execute$777: \eq0 -> \LD [2]
+Add EQ3/$auto$insbuf.cc:97:execute$778: \eq0 -> \LD [3]
+Add EQ3/$auto$insbuf.cc:97:execute$779: \eq0 -> \LD [4]
+Add EQ3/$auto$insbuf.cc:97:execute$780: \eq0 -> \LD [5]
+Add EQ3/$auto$insbuf.cc:97:execute$781: \eq0 -> \LD [6]
+Add EQ3/$auto$insbuf.cc:97:execute$782: \SW2 [2] -> $abc$622$SW2[2]
+Add EQ3/$auto$insbuf.cc:97:execute$783: \SW1 [2] -> $abc$622$SW1[2]
+Add EQ3/$auto$insbuf.cc:97:execute$784: \SW2 [1] -> $abc$622$SW2[1]
+Add EQ3/$auto$insbuf.cc:97:execute$785: \SW1 [1] -> $abc$622$SW1[1]
+Add EQ3/$auto$insbuf.cc:97:execute$786: \SW2 [0] -> $abc$622$SW2[0]
+Add EQ3/$auto$insbuf.cc:97:execute$787: \SW1 [0] -> $abc$622$SW1[0]
+Add EQ3/$auto$insbuf.cc:97:execute$788: $abc$622$eq0 -> \eq0
+Add NOT/$auto$insbuf.cc:97:execute$789: $auto$hilomap.cc:47:hilomap_worker$750 -> \ld [4]
+Add NOT/$auto$insbuf.cc:97:execute$790: $auto$hilomap.cc:47:hilomap_worker$750 -> \ld [5]
+Add NOT/$auto$insbuf.cc:97:execute$791: $auto$hilomap.cc:47:hilomap_worker$750 -> \ld [6]
+Add NOT/$auto$insbuf.cc:97:execute$792: \SW1 [0] -> $abc$627$SW1[0]
+Add NOT/$auto$insbuf.cc:97:execute$793: $abc$627$ld[0] -> \ld [0]
+Add NOT/$auto$insbuf.cc:97:execute$794: \SW1 [1] -> $abc$627$SW1[1]
+Add NOT/$auto$insbuf.cc:97:execute$795: $abc$627$ld[1] -> \ld [1]
+Add NOT/$auto$insbuf.cc:97:execute$796: \SW1 [2] -> $abc$627$SW1[2]
+Add NOT/$auto$insbuf.cc:97:execute$797: $abc$627$ld[2] -> \ld [2]
+Add NOT/$auto$insbuf.cc:97:execute$798: \SW1 [3] -> $abc$627$SW1[3]
+Add NOT/$auto$insbuf.cc:97:execute$799: $abc$627$ld[3] -> \ld [3]
+Add OR/$auto$insbuf.cc:97:execute$800: $auto$hilomap.cc:47:hilomap_worker$752 -> \ld [4]
+Add OR/$auto$insbuf.cc:97:execute$801: $auto$hilomap.cc:47:hilomap_worker$752 -> \ld [5]
+Add OR/$auto$insbuf.cc:97:execute$802: $auto$hilomap.cc:47:hilomap_worker$752 -> \ld [6]
+Add OR/$auto$insbuf.cc:97:execute$803: \SW2 [0] -> $abc$632$SW2[0]
+Add OR/$auto$insbuf.cc:97:execute$804: \SW1 [0] -> $abc$632$SW1[0]
+Add OR/$auto$insbuf.cc:97:execute$805: $abc$632$ld[0] -> \ld [0]
+Add OR/$auto$insbuf.cc:97:execute$806: \SW2 [1] -> $abc$632$SW2[1]
+Add OR/$auto$insbuf.cc:97:execute$807: \SW1 [1] -> $abc$632$SW1[1]
+Add OR/$auto$insbuf.cc:97:execute$808: $abc$632$ld[1] -> \ld [1]
+Add OR/$auto$insbuf.cc:97:execute$809: \SW2 [2] -> $abc$632$SW2[2]
+Add OR/$auto$insbuf.cc:97:execute$810: \SW1 [2] -> $abc$632$SW1[2]
+Add OR/$auto$insbuf.cc:97:execute$811: $abc$632$ld[2] -> \ld [2]
+Add OR/$auto$insbuf.cc:97:execute$812: \SW2 [3] -> $abc$632$SW2[3]
+Add OR/$auto$insbuf.cc:97:execute$813: \SW1 [3] -> $abc$632$SW1[3]
+Add OR/$auto$insbuf.cc:97:execute$814: $abc$632$ld[3] -> \ld [3]
+Add XOR/$auto$insbuf.cc:97:execute$815: $auto$hilomap.cc:47:hilomap_worker$754 -> \ld [4]
+Add XOR/$auto$insbuf.cc:97:execute$816: $auto$hilomap.cc:47:hilomap_worker$754 -> \ld [5]
+Add XOR/$auto$insbuf.cc:97:execute$817: $auto$hilomap.cc:47:hilomap_worker$754 -> \ld [6]
+Add XOR/$auto$insbuf.cc:97:execute$818: \SW2 [0] -> $abc$637$SW2[0]
+Add XOR/$auto$insbuf.cc:97:execute$819: \SW1 [0] -> $abc$637$SW1[0]
+Add XOR/$auto$insbuf.cc:97:execute$820: $abc$637$ld[0] -> \ld [0]
+Add XOR/$auto$insbuf.cc:97:execute$821: \SW2 [1] -> $abc$637$SW2[1]
+Add XOR/$auto$insbuf.cc:97:execute$822: \SW1 [1] -> $abc$637$SW1[1]
+Add XOR/$auto$insbuf.cc:97:execute$823: $abc$637$ld[1] -> \ld [1]
+Add XOR/$auto$insbuf.cc:97:execute$824: \SW2 [2] -> $abc$637$SW2[2]
+Add XOR/$auto$insbuf.cc:97:execute$825: \SW1 [2] -> $abc$637$SW1[2]
+Add XOR/$auto$insbuf.cc:97:execute$826: $abc$637$ld[2] -> \ld [2]
+Add XOR/$auto$insbuf.cc:97:execute$827: \SW2 [3] -> $abc$637$SW2[3]
+Add XOR/$auto$insbuf.cc:97:execute$828: \SW1 [3] -> $abc$637$SW1[3]
+Add XOR/$auto$insbuf.cc:97:execute$829: $abc$637$ld[3] -> \ld [3]
+Add add/$auto$insbuf.cc:97:execute$830: \s0 -> \LD [0]
+Add add/$auto$insbuf.cc:97:execute$831: \s1 -> \LD [1]
+Add add/$auto$insbuf.cc:97:execute$832: \s2 -> \LD [2]
+Add add/$auto$insbuf.cc:97:execute$833: \s3 -> \LD [3]
+Add add/$auto$insbuf.cc:97:execute$834: \cout4 -> \LD [4]
+Add add/$auto$insbuf.cc:97:execute$835: \s1 -> $abc$642$s1
+Add add/$auto$insbuf.cc:97:execute$836: \s0 -> $abc$642$s0
+Add add/$auto$insbuf.cc:97:execute$837: \s2 -> $abc$642$s2
+Add add/$auto$insbuf.cc:97:execute$838: $abc$642$LD[6] -> \LD [6]
+Add add/$auto$insbuf.cc:97:execute$839: \cout4 -> $abc$642$cout4
+Add add/$auto$insbuf.cc:97:execute$840: \cout3 -> $abc$642$cout3
+Add add/$auto$insbuf.cc:97:execute$841: $abc$642$LD[5] -> \LD [5]
+Add add1/$auto$insbuf.cc:97:execute$842: \cin -> $abc$645$cin
+Add add1/$auto$insbuf.cc:97:execute$843: \a -> $abc$645$a
+Add add1/$auto$insbuf.cc:97:execute$844: \b -> $abc$645$b
+Add add1/$auto$insbuf.cc:97:execute$845: $abc$645$sum -> \sum
+Add add1/$auto$insbuf.cc:97:execute$846: $abc$645$cout -> \cout
+Add compare/$auto$insbuf.cc:97:execute$847: \LD [2] -> \LD [0]
+Add compare/$auto$insbuf.cc:97:execute$848: \LD [2] -> \LD [1]
+Add compare/$auto$insbuf.cc:97:execute$849: \eq0 -> \LD [3]
+Add compare/$auto$insbuf.cc:97:execute$850: \LD [6] -> \LD [4]
+Add compare/$auto$insbuf.cc:97:execute$851: \LD [6] -> \LD [5]
+Add compare/$auto$insbuf.cc:97:execute$852: \SW1 [2] -> $abc$651$SW1[2]
+Add compare/$auto$insbuf.cc:97:execute$853: \SW2 [2] -> $abc$651$SW2[2]
+Add compare/$auto$insbuf.cc:97:execute$854: \SW1 [1] -> $abc$651$SW1[1]
+Add compare/$auto$insbuf.cc:97:execute$855: \SW2 [1] -> $abc$651$SW2[1]
+Add compare/$auto$insbuf.cc:97:execute$856: \SW1 [0] -> $abc$651$SW1[0]
+Add compare/$auto$insbuf.cc:97:execute$857: \SW2 [0] -> $abc$651$SW2[0]
+Add compare/$auto$insbuf.cc:97:execute$858: $abc$651$eq0 -> \eq0
+Add compare/$auto$insbuf.cc:97:execute$859: $abc$651$LD[6] -> \LD [6]
+Add compare/$auto$insbuf.cc:97:execute$860: $abc$651$LD[2] -> \LD [2]
+Add subtraction/$auto$insbuf.cc:97:execute$861: \SW2 [0] -> \SW0s[0]
+Add subtraction/$auto$insbuf.cc:97:execute$862: \SW2 [1] -> $abc$668$SW2[1]
+Add subtraction/$auto$insbuf.cc:97:execute$863: \SW2 [0] -> $abc$668$SW2[0]
+Add subtraction/$auto$insbuf.cc:97:execute$864: $abc$668$SW0s[1] -> \SW0s[1]
+Add subtraction/$auto$insbuf.cc:97:execute$865: \SW2 [2] -> $abc$668$SW2[2]
+Add subtraction/$auto$insbuf.cc:97:execute$866: $abc$668$SW0s[2] -> \SW0s[2]
+Add top/$auto$insbuf.cc:97:execute$867: \BTN [1] -> $abc$672$BTN[1]
+Add top/$auto$insbuf.cc:97:execute$868: \BTN [2] -> $abc$672$BTN[2]
+Add top/$auto$insbuf.cc:97:execute$869: \BTN [0] -> $abc$672$BTN[0]
+Add top/$auto$insbuf.cc:97:execute$870: \resul0[0] -> $abc$672$resul0[0]
+Add top/$auto$insbuf.cc:97:execute$871: \resul1[0] -> $abc$672$resul1[0]
+Add top/$auto$insbuf.cc:97:execute$872: \resul2[0] -> $abc$672$resul2[0]
+Add top/$auto$insbuf.cc:97:execute$873: \resul3[0] -> $abc$672$resul3[0]
+Add top/$auto$insbuf.cc:97:execute$874: \resul4[0] -> $abc$672$resul4[0]
+Add top/$auto$insbuf.cc:97:execute$875: \resul5[0] -> $abc$672$resul5[0]
+Add top/$auto$insbuf.cc:97:execute$876: \resul6[0] -> $abc$672$resul6[0]
+Add top/$auto$insbuf.cc:97:execute$877: \resul7[0] -> $abc$672$resul7[0]
+Add top/$auto$insbuf.cc:97:execute$878: $abc$672$LD[0] -> \LD [0]
+Add top/$auto$insbuf.cc:97:execute$879: \resul0[1] -> $abc$672$resul0[1]
+Add top/$auto$insbuf.cc:97:execute$880: \resul1[1] -> $abc$672$resul1[1]
+Add top/$auto$insbuf.cc:97:execute$881: \resul2[1] -> $abc$672$resul2[1]
+Add top/$auto$insbuf.cc:97:execute$882: \resul3[1] -> $abc$672$resul3[1]
+Add top/$auto$insbuf.cc:97:execute$883: \resul4[1] -> $abc$672$resul4[1]
+Add top/$auto$insbuf.cc:97:execute$884: \resul5[1] -> $abc$672$resul5[1]
+Add top/$auto$insbuf.cc:97:execute$885: \resul6[1] -> $abc$672$resul6[1]
+Add top/$auto$insbuf.cc:97:execute$886: \resul7[1] -> $abc$672$resul7[1]
+Add top/$auto$insbuf.cc:97:execute$887: $abc$672$LD[1] -> \LD [1]
+Add top/$auto$insbuf.cc:97:execute$888: \resul0[2] -> $abc$672$resul0[2]
+Add top/$auto$insbuf.cc:97:execute$889: \resul1[2] -> $abc$672$resul1[2]
+Add top/$auto$insbuf.cc:97:execute$890: \resul2[2] -> $abc$672$resul2[2]
+Add top/$auto$insbuf.cc:97:execute$891: \resul3[2] -> $abc$672$resul3[2]
+Add top/$auto$insbuf.cc:97:execute$892: \resul4[2] -> $abc$672$resul4[2]
+Add top/$auto$insbuf.cc:97:execute$893: \resul5[2] -> $abc$672$resul5[2]
+Add top/$auto$insbuf.cc:97:execute$894: \resul6[2] -> $abc$672$resul6[2]
+Add top/$auto$insbuf.cc:97:execute$895: \resul7[2] -> $abc$672$resul7[2]
+Add top/$auto$insbuf.cc:97:execute$896: $abc$672$LD[2] -> \LD [2]
+Add top/$auto$insbuf.cc:97:execute$897: \resul0[3] -> $abc$672$resul0[3]
+Add top/$auto$insbuf.cc:97:execute$898: \resul1[3] -> $abc$672$resul1[3]
+Add top/$auto$insbuf.cc:97:execute$899: \resul2[3] -> $abc$672$resul2[3]
+Add top/$auto$insbuf.cc:97:execute$900: \resul3[3] -> $abc$672$resul3[3]
+Add top/$auto$insbuf.cc:97:execute$901: \resul4[3] -> $abc$672$resul4[3]
+Add top/$auto$insbuf.cc:97:execute$902: \resul5[3] -> $abc$672$resul5[3]
+Add top/$auto$insbuf.cc:97:execute$903: \resul6[3] -> $abc$672$resul6[3]
+Add top/$auto$insbuf.cc:97:execute$904: \resul7[3] -> $abc$672$resul7[3]
+Add top/$auto$insbuf.cc:97:execute$905: $abc$672$LD[3] -> \LD [3]
+Add top/$auto$insbuf.cc:97:execute$906: \resul0[4] -> $abc$672$resul0[4]
+Add top/$auto$insbuf.cc:97:execute$907: \resul1[4] -> $abc$672$resul1[4]
+Add top/$auto$insbuf.cc:97:execute$908: \resul2[4] -> $abc$672$resul2[4]
+Add top/$auto$insbuf.cc:97:execute$909: \resul3[4] -> $abc$672$resul3[4]
+Add top/$auto$insbuf.cc:97:execute$910: \resul4[4] -> $abc$672$resul4[4]
+Add top/$auto$insbuf.cc:97:execute$911: \resul5[4] -> $abc$672$resul5[4]
+Add top/$auto$insbuf.cc:97:execute$912: \resul6[4] -> $abc$672$resul6[4]
+Add top/$auto$insbuf.cc:97:execute$913: \resul7[4] -> $abc$672$resul7[4]
+Add top/$auto$insbuf.cc:97:execute$914: $abc$672$LD[4] -> \LD [4]
+Add top/$auto$insbuf.cc:97:execute$915: \resul0[5] -> $abc$672$resul0[5]
+Add top/$auto$insbuf.cc:97:execute$916: \resul1[5] -> $abc$672$resul1[5]
+Add top/$auto$insbuf.cc:97:execute$917: \resul2[5] -> $abc$672$resul2[5]
+Add top/$auto$insbuf.cc:97:execute$918: \resul3[5] -> $abc$672$resul3[5]
+Add top/$auto$insbuf.cc:97:execute$919: \resul4[5] -> $abc$672$resul4[5]
+Add top/$auto$insbuf.cc:97:execute$920: \resul5[5] -> $abc$672$resul5[5]
+Add top/$auto$insbuf.cc:97:execute$921: \resul6[5] -> $abc$672$resul6[5]
+Add top/$auto$insbuf.cc:97:execute$922: \resul7[5] -> $abc$672$resul7[5]
+Add top/$auto$insbuf.cc:97:execute$923: $abc$672$LD[5] -> \LD [5]
+Add top/$auto$insbuf.cc:97:execute$924: \resul0[6] -> $abc$672$resul0[6]
+Add top/$auto$insbuf.cc:97:execute$925: \resul1[6] -> $abc$672$resul1[6]
+Add top/$auto$insbuf.cc:97:execute$926: \resul2[6] -> $abc$672$resul2[6]
+Add top/$auto$insbuf.cc:97:execute$927: \resul3[6] -> $abc$672$resul3[6]
+Add top/$auto$insbuf.cc:97:execute$928: \resul4[6] -> $abc$672$resul4[6]
+Add top/$auto$insbuf.cc:97:execute$929: \resul5[6] -> $abc$672$resul5[6]
+Add top/$auto$insbuf.cc:97:execute$930: \resul6[6] -> $abc$672$resul6[6]
+Add top/$auto$insbuf.cc:97:execute$931: \resul7[6] -> $abc$672$resul7[6]
+Add top/$auto$insbuf.cc:97:execute$932: $abc$672$LD[6] -> \LD [6]
+
+14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \AND..
+Finding unused cells or wires in module \EQ3..
+Finding unused cells or wires in module \NOT..
+Finding unused cells or wires in module \OR..
+Finding unused cells or wires in module \XOR..
+Finding unused cells or wires in module \add..
+Finding unused cells or wires in module \add1..
+Finding unused cells or wires in module \compare..
+Finding unused cells or wires in module \subtraction..
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 136 unused wires.
+<suppressed ~6 debug messages>
+
+15. Executing CHECK pass (checking for obvious problems).
+Checking module AND...
+Warning: Wire AND.\ld [6] is used but has no driver.
+Warning: Wire AND.\ld [5] is used but has no driver.
+Warning: Wire AND.\ld [4] is used but has no driver.
+Warning: Wire AND.\ld [3] is used but has no driver.
+Warning: Wire AND.\ld [2] is used but has no driver.
+Warning: Wire AND.\ld [1] is used but has no driver.
+Warning: Wire AND.\ld [0] is used but has no driver.
+Checking module EQ3...
+Warning: Wire EQ3.\LD [6] is used but has no driver.
+Warning: Wire EQ3.\LD [5] is used but has no driver.
+Warning: Wire EQ3.\LD [4] is used but has no driver.
+Warning: Wire EQ3.\LD [3] is used but has no driver.
+Warning: Wire EQ3.\LD [2] is used but has no driver.
+Warning: Wire EQ3.\LD [1] is used but has no driver.
+Warning: Wire EQ3.\LD [0] is used but has no driver.
+Checking module NOT...
+Warning: Wire NOT.\ld [6] is used but has no driver.
+Warning: Wire NOT.\ld [5] is used but has no driver.
+Warning: Wire NOT.\ld [4] is used but has no driver.
+Warning: Wire NOT.\ld [3] is used but has no driver.
+Warning: Wire NOT.\ld [2] is used but has no driver.
+Warning: Wire NOT.\ld [1] is used but has no driver.
+Warning: Wire NOT.\ld [0] is used but has no driver.
+Checking module OR...
+Warning: Wire OR.\ld [6] is used but has no driver.
+Warning: Wire OR.\ld [5] is used but has no driver.
+Warning: Wire OR.\ld [4] is used but has no driver.
+Warning: Wire OR.\ld [3] is used but has no driver.
+Warning: Wire OR.\ld [2] is used but has no driver.
+Warning: Wire OR.\ld [1] is used but has no driver.
+Warning: Wire OR.\ld [0] is used but has no driver.
+Checking module XOR...
+Warning: Wire XOR.\ld [6] is used but has no driver.
+Warning: Wire XOR.\ld [5] is used but has no driver.
+Warning: Wire XOR.\ld [4] is used but has no driver.
+Warning: Wire XOR.\ld [3] is used but has no driver.
+Warning: Wire XOR.\ld [2] is used but has no driver.
+Warning: Wire XOR.\ld [1] is used but has no driver.
+Warning: Wire XOR.\ld [0] is used but has no driver.
+Checking module add...
+Warning: Wire add.\LD [6] is used but has no driver.
+Warning: Wire add.\LD [5] is used but has no driver.
+Warning: Wire add.\LD [4] is used but has no driver.
+Warning: Wire add.\LD [3] is used but has no driver.
+Warning: Wire add.\LD [2] is used but has no driver.
+Warning: Wire add.\LD [1] is used but has no driver.
+Warning: Wire add.\LD [0] is used but has no driver.
+Warning: Wire add.$auto$hilomap.cc:47:hilomap_worker$756 is used but has no driver.
+Checking module add1...
+Warning: Wire add1.\sum is used but has no driver.
+Warning: Wire add1.\cout is used but has no driver.
+Checking module compare...
+Warning: Wire compare.\LD [6] is used but has no driver.
+Warning: Wire compare.\LD [5] is used but has no driver.
+Warning: Wire compare.\LD [4] is used but has no driver.
+Warning: Wire compare.\LD [3] is used but has no driver.
+Warning: Wire compare.\LD [2] is used but has no driver.
+Warning: Wire compare.\LD [1] is used but has no driver.
+Warning: Wire compare.\LD [0] is used but has no driver.
+Checking module subtraction...
+Warning: Wire subtraction.$auto$hilomap.cc:39:hilomap_worker$758 is used but has no driver.
+Warning: Wire subtraction.\SW0s[2] is used but has no driver.
+Warning: Wire subtraction.\SW0s[1] is used but has no driver.
+Checking module top...
+Warning: Wire top.\LD [6] is used but has no driver.
+Warning: Wire top.\LD [5] is used but has no driver.
+Warning: Wire top.\LD [4] is used but has no driver.
+Warning: Wire top.\LD [3] is used but has no driver.
+Warning: Wire top.\LD [2] is used but has no driver.
+Warning: Wire top.\LD [1] is used but has no driver.
+Warning: Wire top.\LD [0] is used but has no driver.
+Found and reported 62 problems.
+
+16. Printing statistics.
+
+=== AND ===
+
+   Number of wires:                 16
+   Number of wire bits:             28
+   Number of public wires:           3
+   Number of public wire bits:      15
+   Number of ports:                  3
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     AND2_X4                         4
+     BUF_X1                         15
+     LOGIC0_X1                       1
+
+   Chip area for module '\AND': 22.078000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== EQ3 ===
+
+   Number of wires:                 14
+   Number of wire bits:             24
+   Number of public wires:           4
+   Number of public wire bits:      14
+   Number of ports:                  3
+   Number of port bits:             13
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 18
+     AND3_X1                         1
+     BUF_X1                         14
+     XNOR2_X2                        3
+
+   Chip area for module '\EQ3': 20.482000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== NOT ===
+
+   Number of wires:                 11
+   Number of wire bits:             20
+   Number of public wires:           2
+   Number of public wire bits:      11
+   Number of ports:                  2
+   Number of port bits:             11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     BUF_X1                         11
+     INV_X1                          4
+     LOGIC0_X1                       1
+
+   Chip area for module '\NOT': 11.438000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== OR ===
+
+   Number of wires:                 16
+   Number of wire bits:             28
+   Number of public wires:           3
+   Number of public wire bits:      15
+   Number of ports:                  3
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     BUF_X1                         15
+     LOGIC0_X1                       1
+     OR2_X4                          4
+
+   Chip area for module '\OR': 22.078000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== XOR ===
+
+   Number of wires:                 16
+   Number of wire bits:             28
+   Number of public wires:           3
+   Number of public wire bits:      15
+   Number of ports:                  3
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     BUF_X1                         15
+     LOGIC0_X1                       1
+     XOR2_X1                         4
+
+   Chip area for module '\XOR': 18.886000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== add ===
+
+   Number of wires:                 19
+   Number of wire bits:             31
+   Number of public wires:          11
+   Number of public wire bits:      23
+   Number of ports:                  3
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 19
+     BUF_X1                         12
+     LOGIC0_X1                       1
+     NOR3_X1                         1
+     XOR2_X1                         1
+     add1                            4
+
+   Area for cell type \add1 is unknown!
+
+   Chip area for module '\add': 12.768000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== add1 ===
+
+   Number of wires:                 13
+   Number of wire bits:             13
+   Number of public wires:           5
+   Number of public wire bits:       5
+   Number of ports:                  5
+   Number of port bits:              5
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 10
+     BUF_X1                          5
+     NAND2_X1                        3
+     XOR2_X1                         1
+     XOR2_X2                         1
+
+   Chip area for module '\add1': 10.374000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== compare ===
+
+   Number of wires:                 26
+   Number of wire bits:             36
+   Number of public wires:           4
+   Number of public wire bits:      14
+   Number of ports:                  3
+   Number of port bits:             13
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 30
+     AND2_X1                         1
+     AND2_X4                         1
+     AND4_X2                         1
+     AOI21_X4                        1
+     BUF_X1                         14
+     INV_X1                          3
+     INV_X32                         2
+     NAND2_X1                        1
+     NOR2_X1                         4
+     OAI22_X1                        2
+
+   Chip area for module '\compare': 45.752000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== subtraction ===
+
+   Number of wires:                 13
+   Number of wire bits:             25
+   Number of public wires:           6
+   Number of public wire bits:      18
+   Number of ports:                  3
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 11
+     BUF_X1                          6
+     LOGIC1_X1                       1
+     NOR2_X4                         1
+     XNOR2_X1                        1
+     XOR2_X1                         1
+     add                             1
+
+   Area for cell type \add is unknown!
+
+   Chip area for module '\subtraction': 10.906000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== top ===
+
+   Number of wires:                194
+   Number of wire bits:            208
+   Number of public wires:          60
+   Number of public wire bits:      74
+   Number of ports:                  4
+   Number of port bits:             18
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                149
+     AND                             1
+     AND2_X1                         1
+     AND2_X2                         3
+     AND2_X4                         2
+     AND3_X1                        13
+     AND3_X2                         8
+     AND4_X1                         7
+     AOI21_X1                       20
+     AOI21_X2                        8
+     BUF_X1                         66
+     EQ3                             1
+     INV_X2                          1
+     INV_X32                         2
+     NAND4_X1                        7
+     NOR2_X1                         1
+     NOR2_X4                         2
+     NOT                             1
+     OR                              1
+     XOR                             1
+     add                             1
+     compare                         1
+     subtraction                     1
+
+   Area for cell type \add is unknown!
+   Area for cell type \subtraction is unknown!
+   Area for cell type \NOT is unknown!
+   Area for cell type \AND is unknown!
+   Area for cell type \OR is unknown!
+   Area for cell type \XOR is unknown!
+   Area for cell type \compare is unknown!
+   Area for cell type \EQ3 is unknown!
+
+   Chip area for module '\top': 173.166000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== design hierarchy ===
+
+   top                               1
+     AND                             1
+     EQ3                             1
+     NOT                             1
+     OR                              1
+     XOR                             1
+     add                             1
+       add1                          4
+     compare                         1
+     subtraction                     1
+       add                           1
+         add1                        4
+
+   Number of wires:                448
+   Number of wire bits:            563
+   Number of public wires:         147
+   Number of public wire bits:     262
+   Number of ports:                 70
+   Number of port bits:            185
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                385
+     AND2_X1                         2
+     AND2_X2                         3
+     AND2_X4                         7
+     AND3_X1                        14
+     AND3_X2                         8
+     AND4_X1                         7
+     AND4_X2                         1
+     AOI21_X1                       20
+     AOI21_X2                        8
+     AOI21_X4                        1
+     BUF_X1                        220
+     INV_X1                          7
+     INV_X2                          1
+     INV_X32                         4
+     LOGIC0_X1                       6
+     LOGIC1_X1                       1
+     NAND2_X1                       25
+     NAND4_X1                        7
+     NOR2_X1                         5
+     NOR2_X4                         3
+     NOR3_X1                         2
+     OAI22_X1                        2
+     OR2_X4                          4
+     XNOR2_X1                        1
+     XNOR2_X2                        3
+     XOR2_X1                        15
+     XOR2_X2                         8
+
+   Chip area for top module '\top': 433.314000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+17. Executing Verilog backend.
+Dumping module `\AND'.
+Dumping module `\EQ3'.
+Dumping module `\NOT'.
+Dumping module `\OR'.
+Dumping module `\XOR'.
+Dumping module `\add'.
+Dumping module `\add1'.
+Dumping module `\compare'.
+Dumping module `\subtraction'.
+Dumping module `\top'.
+
+Warnings: 70 unique messages, 134 total
+End of script. Logfile hash: f77e493bf7, CPU: user 0.30s system 0.03s, MEM: 35.31 MB peak
+Yosys 0.44+20 (git sha1 5fb3c0b1d, clang++ 14.0.0-1ubuntu1.1 -fPIC -O3)
+Time spent: 79% 2x abc (1 sec), 4% 24x opt_expr (0 sec), ...

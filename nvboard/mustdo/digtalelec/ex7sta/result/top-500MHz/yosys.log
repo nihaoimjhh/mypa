@@ -1,0 +1,165 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.44+20 (git sha1 5fb3c0b1d, clang++ 14.0.0-1ubuntu1.1 -fPIC -O3)
+
+-- Executing script file `-' --
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: /home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGascll.v
+Parsing SystemVerilog input from `/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGascll.v' to AST representation.
+Generating RTLIL representation for module `\SEGascii'.
+Generating RTLIL representation for module `\scancode_to_ascii'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/ps2_keyboard.v
+Parsing SystemVerilog input from `/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/ps2_keyboard.v' to AST representation.
+Generating RTLIL representation for module `\ps2_keyboard'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEG.v
+Parsing SystemVerilog input from `/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEG.v' to AST representation.
+Generating RTLIL representation for module `\SEG'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v
+Parsing SystemVerilog input from `/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGstate.v
+Parsing SystemVerilog input from `/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGstate.v' to AST representation.
+Generating RTLIL representation for module `\SEGstate'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/jinghanhui/yosys-sta/scripts/../nangate45/verilog/blackbox.v
+Parsing Verilog input from `/home/jinghanhui/yosys-sta/scripts/../nangate45/verilog/blackbox.v' to AST representation.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/jinghanhui/yosys-sta/scripts/../nangate45/verilog/cells_clkgate.v
+Parsing Verilog input from `/home/jinghanhui/yosys-sta/scripts/../nangate45/verilog/cells_clkgate.v' to AST representation.
+Generating RTLIL representation for module `\OPENROAD_CLKGATE'.
+Successfully finished Verilog frontend.
+
+8. Executing SYNTH pass.
+
+8.1. Executing HIERARCHY pass (managing design hierarchy).
+
+8.1.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \SEGascii
+Used module:         \scancode_to_ascii
+Used module:     \SEGstate
+Used module:     \SEG
+Used module:     \ps2_keyboard
+
+8.1.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \SEGascii
+Used module:         \scancode_to_ascii
+Used module:     \SEGstate
+Used module:     \SEG
+Used module:     \ps2_keyboard
+Removing unused module `\OPENROAD_CLKGATE'.
+Removed 1 unused modules.
+Module top directly or indirectly displays text -> setting "keep" attribute.
+Mapping positional arguments of cell top.my_ascii (SEGascii).
+Mapping positional arguments of cell top.my_codeSEG (SEGstate).
+Mapping positional arguments of cell top.my_countSEG (SEG).
+Mapping positional arguments of cell SEGascii.my_turn (scancode_to_ascii).
+
+8.2. Executing PROC pass (convert processes to netlists).
+
+8.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 2 dead cases from process $proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGstate.v:4$48 in module SEGstate.
+Marked 3 switch rules as full_case in process $proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGstate.v:4$48 in module SEGstate.
+Marked 2 switch rules as full_case in process $proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:32$40 in module top.
+Marked 1 switch rules as full_case in process $proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:23$38 in module top.
+Marked 1 switch rules as full_case in process $proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:11$32 in module top.
+Removed 2 dead cases from process $proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEG.v:4$31 in module SEG.
+Marked 2 switch rules as full_case in process $proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEG.v:4$31 in module SEG.
+Marked 4 switch rules as full_case in process $proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/ps2_keyboard.v:13$8 in module ps2_keyboard.
+Marked 1 switch rules as full_case in process $proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGascll.v:57$2 in module scancode_to_ascii.
+Removed 2 dead cases from process $proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGascll.v:4$1 in module SEGascii.
+Marked 3 switch rules as full_case in process $proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGascll.v:4$1 in module SEGascii.
+Removed a total of 6 dead cases.
+
+8.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 15 assignments to connections.
+
+8.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\top.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:5$46'.
+  Set init value: \tep = 1'1
+
+8.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\top.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:23$38'.
+
+8.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 7 switches.
+<suppressed ~10 debug messages>
+
+8.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SEGstate.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGstate.v:4$48'.
+     1/4: $2\hex_low[6:0]
+     2/4: $2\hex_high[6:0]
+     3/4: $1\hex_low[6:0]
+     4/4: $1\hex_high[6:0]
+Creating decoders for process `\top.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:6$47'.
+Creating decoders for process `\top.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:5$46'.
+Creating decoders for process `\top.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:32$40'.
+     1/3: $1\count[7:0]
+     2/3: $0\tep[0:0]
+     3/3: $0\key_code[7:0]
+Creating decoders for process `\top.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:23$38'.
+     1/2: $0\state[0:0]
+     2/2: $0\count[7:0]
+Creating decoders for process `\top.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:11$32'.
+     1/1: $0\next_state[0:0]
+Creating decoders for process `\SEG.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEG.v:4$31'.
+     1/2: $1\hex_low[6:0]
+     2/2: $1\hex_high[6:0]
+Creating decoders for process `\ps2_keyboard.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/ps2_keyboard.v:13$8'.
+     1/11: $4\outdata[7:0]
+     2/11: $3\outdata[7:0]
+     3/11: $3$lookahead\buffer$7[9:0]$18
+     4/11: $3$bitselwrite$pos$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/ps2_keyboard.v:27$3[3:0]$17
+     5/11: $2$lookahead\buffer$7[9:0]$15
+     6/11: $2$bitselwrite$pos$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/ps2_keyboard.v:27$3[3:0]$14
+     7/11: $2\outdata[7:0]
+     8/11: $1$lookahead\buffer$7[9:0]$13
+     9/11: $1$bitselwrite$pos$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/ps2_keyboard.v:27$3[3:0]$12
+    10/11: $1\outdata[7:0]
+    11/11: $0\count[3:0]
+Creating decoders for process `\ps2_keyboard.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/ps2_keyboard.v:7$4'.
+Creating decoders for process `\scancode_to_ascii.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGascll.v:57$2'.
+     1/1: $1\ascii[7:0]
+Creating decoders for process `\SEGascii.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGascll.v:4$1'.
+     1/4: $2\hex_low[6:0]
+     2/4: $2\hex_high[6:0]
+     3/4: $1\hex_low[6:0]
+     4/4: $1\hex_high[6:0]
+
+8.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\SEGstate.\hex_high' from process `\SEGstate.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGstate.v:4$48'.
+No latch inferred for signal `\SEGstate.\hex_low' from process `\SEGstate.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGstate.v:4$48'.
+No latch inferred for signal `\top.\temp' from process `\top.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:6$47'.
+No latch inferred for signal `\SEG.\hex_high' from process `\SEG.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEG.v:4$31'.
+No latch inferred for signal `\SEG.\hex_low' from process `\SEG.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEG.v:4$31'.
+No latch inferred for signal `\scancode_to_ascii.\ascii' from process `\scancode_to_ascii.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGascll.v:57$2'.
+No latch inferred for signal `\SEGascii.\hex_high' from process `\SEGascii.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGascll.v:4$1'.
+No latch inferred for signal `\SEGascii.\hex_low' from process `\SEGascii.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/SEGascll.v:4$1'.
+
+8.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\top.\count' using process `\top.$proc$/home/jinghanhui/verilogtest/mustdo/ex7sta/vsrc/top.v:32$40'.
+ERROR: Multiple edge sensitive events found for this signal!

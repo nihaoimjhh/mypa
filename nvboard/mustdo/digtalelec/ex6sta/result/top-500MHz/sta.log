@@ -1,0 +1,120 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20240820 00:45:00.446946 325388 Sta.cc:375] read verilog file /home/jinghanhui/verilogtest/mustdo/ex6sta/result/top-500MHz/top.netlist.fixed.v start
+I20240820 00:45:00.447005 325388 VerilogParserRustC.cc:41] load verilog file /home/jinghanhui/verilogtest/mustdo/ex6sta/result/top-500MHz/top.netlist.fixed.v
+r str /home/jinghanhui/verilogtest/mustdo/ex6sta/result/top-500MHz/top.netlist.fixed.v
+I20240820 00:45:00.447729 325388 Sta.cc:379] read verilog end
+I20240820 00:45:00.447767 325388 Sta.cc:298] load lib start
+I20240820 00:45:00.449155 325390 LibParserRustC.cc:1269] load liberty file /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib
+rust read lib file /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib
+I20240820 00:45:00.834234 325390 LibParserRustC.cc:1278] load liberty file /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib success.
+I20240820 00:45:00.834614 325388 Sta.cc:317] load lib end
+I20240820 00:45:00.834652 325388 Sta.cc:405] link design top start
+I20240820 00:45:00.835453 325426 LibParserRustC.cc:1289] link liberty file /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib start.
+I20240820 00:45:00.941421 325426 LibParserRustC.cc:1295] link liberty file /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib success.
+I20240820 00:45:00.945008 325388 Sta.cc:790] link design top end
+I20240820 00:45:00.945066 325388 Sta.cc:172] read sdc /home/jinghanhui/verilogtest/mustdo/ex6sta/sdcsrc/top.sdc start 
+I20240820 00:45:00.946028 325388 Sta.cc:185] read sdc end
+I20240820 00:45:00.946053 325388 StaBuildGraph.cc:310] build graph start
+I20240820 00:45:00.950304 325388 StaBuildGraph.cc:327] build graph end
+I20240820 00:45:00.950310 325388 Sta.cc:2287] update timing start
+I20240820 00:45:00.950434 325388 StaApplySdc.cc:694] apply sdc start
+I20240820 00:45:00.950452 325388 StaApplySdc.cc:725] apply sdc end
+I20240820 00:45:00.950457 325388 StaClockPropagation.cc:320] ideal clock propagation start
+I20240820 00:45:00.950464 325388 StaClockPropagation.cc:416] ideal clock propagation end
+I20240820 00:45:00.950467 325388 StaCheck.cc:129] found loop fwd start
+I20240820 00:45:00.950533 325388 StaCheck.cc:148] found loop fwd end
+I20240820 00:45:00.950536 325388 StaCheck.cc:150] found loop bwd start
+I20240820 00:45:00.950608 325388 StaCheck.cc:172] found loop bwd end
+I20240820 00:45:00.950610 325388 StaSlewPropagation.cc:266] slew propagation start
+E20240820 00:45:00.951418 325455 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240820 00:45:00.951475 325455 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240820 00:45:00.951447 325478 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240820 00:45:00.951457 325462 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240820 00:45:00.951498 325467 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240820 00:45:00.951426 325464 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240820 00:45:00.951476 325470 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240820 00:45:00.951443 325472 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240820 00:45:00.951442 325457 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240820 00:45:00.951469 325466 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+I20240820 00:45:00.952699 325388 StaSlewPropagation.cc:305] slew propagation end
+I20240820 00:45:00.952715 325388 StaDelayPropagation.cc:268] delay propagation start
+I20240820 00:45:00.954062 325388 StaDelayPropagation.cc:309] delay propagation end
+I20240820 00:45:00.954073 325388 StaClockPropagation.cc:322] propagated(kNormal) clock propagation start
+I20240820 00:45:00.954078 325388 StaClockPropagation.cc:418] propagated(kNormal) clock propagation end
+I20240820 00:45:00.954082 325388 StaApplySdc.cc:694] apply sdc start
+I20240820 00:45:00.954084 325388 StaApplySdc.cc:725] apply sdc end
+I20240820 00:45:00.954087 325388 StaClockPropagation.cc:324] propagated(kGenerated) clock propagation start
+I20240820 00:45:00.954090 325388 StaClockPropagation.cc:420] propagated(kGenerated) clock propagation end
+I20240820 00:45:00.954092 325388 StaApplySdc.cc:694] apply sdc start
+I20240820 00:45:00.954095 325388 StaApplySdc.cc:725] apply sdc end
+I20240820 00:45:00.954165 325388 StaBuildPropTag.cc:325] build propagation tag start
+I20240820 00:45:00.954173 325388 StaDataPropagation.cc:589] data fwd propagation start
+I20240820 00:45:00.954799 325518 StaDataPropagation.cc:529] Thread 123822653048384 date fwd propagate found start vertex.clk
+I20240820 00:45:00.954906 325539 StaDataPropagation.cc:529] Thread 123822757905984 date fwd propagate found start vertex.reset
+I20240820 00:45:00.955356 325388 StaDataPropagation.cc:632] data fwd propagation end
+I20240820 00:45:00.955377 325388 StaDataPropagation.cc:589] data fwd propagation start
+I20240820 00:45:00.957233 325388 StaDataPropagation.cc:632] data fwd propagation end
+I20240820 00:45:00.957266 325388 StaAnalyze.cc:539] analyze timing path start
+E20240820 00:45:00.957280 325388 StaAnalyze.cc:324] The output port hex_high[0] is not constrained
+E20240820 00:45:00.957290 325388 StaAnalyze.cc:324] The output port hex_high[0] is not constrained
+E20240820 00:45:00.957299 325388 StaAnalyze.cc:324] The output port hex_high[1] is not constrained
+E20240820 00:45:00.957309 325388 StaAnalyze.cc:324] The output port hex_high[1] is not constrained
+E20240820 00:45:00.957316 325388 StaAnalyze.cc:324] The output port hex_high[2] is not constrained
+E20240820 00:45:00.957324 325388 StaAnalyze.cc:324] The output port hex_high[2] is not constrained
+E20240820 00:45:00.957331 325388 StaAnalyze.cc:324] The output port hex_high[3] is not constrained
+E20240820 00:45:00.957338 325388 StaAnalyze.cc:324] The output port hex_high[3] is not constrained
+E20240820 00:45:00.957346 325388 StaAnalyze.cc:324] The output port hex_high[4] is not constrained
+E20240820 00:45:00.957360 325388 StaAnalyze.cc:324] The output port hex_high[4] is not constrained
+E20240820 00:45:00.957396 325388 StaAnalyze.cc:302] end vertex _159_:D has no clock data.
+E20240820 00:45:00.957405 325388 StaAnalyze.cc:302] end vertex _159_:D has no clock data.
+E20240820 00:45:00.957413 325388 StaAnalyze.cc:302] end vertex _160_:D has no clock data.
+E20240820 00:45:00.957422 325388 StaAnalyze.cc:302] end vertex _160_:D has no clock data.
+E20240820 00:45:00.957429 325388 StaAnalyze.cc:302] end vertex _160_:SN has no clock data.
+E20240820 00:45:00.957437 325388 StaAnalyze.cc:302] end vertex _160_:SN has no clock data.
+E20240820 00:45:00.957444 325388 StaAnalyze.cc:302] end vertex _161_:D has no clock data.
+E20240820 00:45:00.957451 325388 StaAnalyze.cc:302] end vertex _161_:D has no clock data.
+E20240820 00:45:00.957459 325388 StaAnalyze.cc:302] end vertex _161_:RN has no clock data.
+E20240820 00:45:00.957466 325388 StaAnalyze.cc:302] end vertex _161_:RN has no clock data.
+E20240820 00:45:00.957474 325388 StaAnalyze.cc:302] end vertex _162_:D has no clock data.
+E20240820 00:45:00.957482 325388 StaAnalyze.cc:302] end vertex _162_:D has no clock data.
+E20240820 00:45:00.957489 325388 StaAnalyze.cc:302] end vertex _162_:RN has no clock data.
+E20240820 00:45:00.957496 325388 StaAnalyze.cc:302] end vertex _162_:RN has no clock data.
+E20240820 00:45:00.957504 325388 StaAnalyze.cc:302] end vertex _163_:D has no clock data.
+E20240820 00:45:00.957512 325388 StaAnalyze.cc:302] end vertex _163_:D has no clock data.
+E20240820 00:45:00.957520 325388 StaAnalyze.cc:302] end vertex _163_:RN has no clock data.
+E20240820 00:45:00.957526 325388 StaAnalyze.cc:302] end vertex _163_:RN has no clock data.
+E20240820 00:45:00.957535 325388 StaAnalyze.cc:302] end vertex _164_:D has no clock data.
+E20240820 00:45:00.957542 325388 StaAnalyze.cc:302] end vertex _164_:D has no clock data.
+E20240820 00:45:00.957549 325388 StaAnalyze.cc:302] end vertex _164_:RN has no clock data.
+E20240820 00:45:00.957556 325388 StaAnalyze.cc:302] end vertex _164_:RN has no clock data.
+E20240820 00:45:00.957563 325388 StaAnalyze.cc:302] end vertex _165_:D has no clock data.
+E20240820 00:45:00.957571 325388 StaAnalyze.cc:302] end vertex _165_:D has no clock data.
+E20240820 00:45:00.957579 325388 StaAnalyze.cc:302] end vertex _165_:RN has no clock data.
+E20240820 00:45:00.957587 325388 StaAnalyze.cc:302] end vertex _165_:RN has no clock data.
+E20240820 00:45:00.957594 325388 StaAnalyze.cc:302] end vertex _166_:D has no clock data.
+E20240820 00:45:00.957602 325388 StaAnalyze.cc:302] end vertex _166_:D has no clock data.
+E20240820 00:45:00.957609 325388 StaAnalyze.cc:302] end vertex _166_:RN has no clock data.
+E20240820 00:45:00.957616 325388 StaAnalyze.cc:302] end vertex _166_:RN has no clock data.
+E20240820 00:45:00.957623 325388 StaAnalyze.cc:302] end vertex _167_:D has no clock data.
+E20240820 00:45:00.957631 325388 StaAnalyze.cc:302] end vertex _167_:D has no clock data.
+E20240820 00:45:00.957639 325388 StaAnalyze.cc:302] end vertex _167_:RN has no clock data.
+E20240820 00:45:00.957646 325388 StaAnalyze.cc:302] end vertex _167_:RN has no clock data.
+I20240820 00:45:00.957654 325388 StaAnalyze.cc:577] analyze timing path end
+I20240820 00:45:00.957662 325388 StaApplySdc.cc:694] apply sdc start
+I20240820 00:45:00.957672 325388 StaApplySdc.cc:725] apply sdc end
+I20240820 00:45:00.957681 325388 StaDataPropagation.cc:635] data bwd propagation start
+I20240820 00:45:00.959199 325388 StaDataPropagation.cc:670] data bwd propagation end
+I20240820 00:45:00.959211 325388 Sta.cc:2316] update timing end
+I20240820 00:45:00.959290 325388 Sta.cc:2410] start write sta report.
+I20240820 00:45:00.959295 325388 Sta.cc:2411] output sta report path: /home/jinghanhui/verilogtest/mustdo/ex6sta/result/top-500MHz
+I20240820 00:45:00.959398 325388 Sta.cc:1390] 
++----------+-------------+------------+------------+---------------+------+-------+-----------+
+| Endpoint | Clock Group | Delay Type | Path Delay | Path Required | CPPR | Slack | Freq(MHz) |
++----------+-------------+------------+------------+---------------+------+-------+-----------+
+I20240820 00:45:00.959424 325388 Sta.cc:1391] 
++-------+------------+-----+
+| Clock | Delay Type | TNS |
++-------+------------+-----+
+I20240820 00:45:00.961580 325388 NetlistWriter.cc:52] start write verilog file /home/jinghanhui/verilogtest/mustdo/ex6sta/result/top-500MHz/top.v
+I20240820 00:45:00.962131 325388 NetlistWriter.cc:71] finish write verilog file /home/jinghanhui/verilogtest/mustdo/ex6sta/result/top-500MHz/top.v
+I20240820 00:45:00.962139 325388 Sta.cc:2495] The timing engine run success.

@@ -1,0 +1,11 @@
+
+15. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$7c4142ec5efe02ac2b641912058d7ad3c8e770b6\MuxKey...
+Warning: Wire $paramod$7c4142ec5efe02ac2b641912058d7ad3c8e770b6\MuxKey.$auto$hilomap.cc:47:hilomap_worker$230 is used but has no driver.
+Checking module $paramod$c44997bd4209540e6eefebce7e7612707e0ddf71\MuxKeyInternal...
+Warning: Wire $paramod$c44997bd4209540e6eefebce7e7612707e0ddf71\MuxKeyInternal.\out [1] is used but has no driver.
+Warning: Wire $paramod$c44997bd4209540e6eefebce7e7612707e0ddf71\MuxKeyInternal.\out [0] is used but has no driver.
+Checking module top...
+Warning: Wire top.$auto$hilomap.cc:47:hilomap_worker$234 is used but has no driver.
+Warning: Wire top.$auto$hilomap.cc:39:hilomap_worker$232 is used but has no driver.
+Found and reported 5 problems.

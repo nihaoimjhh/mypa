@@ -1,0 +1,88 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20240818 18:17:27.761627 480386 Sta.cc:375] read verilog file /home/jinghanhui/verilogtest/mustdo/ex1sta/result/top-500MHz/top.netlist.fixed.v start
+I20240818 18:17:27.761682 480386 VerilogParserRustC.cc:41] load verilog file /home/jinghanhui/verilogtest/mustdo/ex1sta/result/top-500MHz/top.netlist.fixed.v
+r str /home/jinghanhui/verilogtest/mustdo/ex1sta/result/top-500MHz/top.netlist.fixed.v
+I20240818 18:17:27.761940 480386 Sta.cc:379] read verilog end
+I20240818 18:17:27.761962 480386 Sta.cc:298] load lib start
+I20240818 18:17:27.763643 480395 LibParserRustC.cc:1269] load liberty file /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib
+rust read lib file /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib
+I20240818 18:17:28.156741 480395 LibParserRustC.cc:1278] load liberty file /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib success.
+I20240818 18:17:28.157166 480386 Sta.cc:317] load lib end
+I20240818 18:17:28.157229 480386 Sta.cc:405] link design top start
+I20240818 18:17:28.158092 480464 LibParserRustC.cc:1289] link liberty file /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib start.
+I20240818 18:17:28.182159 480464 LibParserRustC.cc:1295] link liberty file /home/jinghanhui/yosys-sta/scripts/../nangate45/lib/merged.lib success.
+I20240818 18:17:28.183785 480386 Sta.cc:790] link design top end
+I20240818 18:17:28.183835 480386 Sta.cc:172] read sdc /home/jinghanhui/verilogtest/mustdo/ex1sta/sdcsrc/top.sdc start 
+I20240818 18:17:28.184747 480386 Sta.cc:185] read sdc end
+I20240818 18:17:28.184774 480386 StaBuildGraph.cc:310] build graph start
+I20240818 18:17:28.185972 480386 StaBuildGraph.cc:327] build graph end
+I20240818 18:17:28.185984 480386 Sta.cc:2287] update timing start
+I20240818 18:17:28.186064 480386 StaApplySdc.cc:694] apply sdc start
+I20240818 18:17:28.186084 480386 StaApplySdc.cc:725] apply sdc end
+I20240818 18:17:28.186120 480386 StaClockPropagation.cc:320] ideal clock propagation start
+I20240818 18:17:28.186128 480386 StaClockPropagation.cc:416] ideal clock propagation end
+I20240818 18:17:28.186133 480386 StaCheck.cc:129] found loop fwd start
+I20240818 18:17:28.186156 480386 StaCheck.cc:148] found loop fwd end
+I20240818 18:17:28.186159 480386 StaCheck.cc:150] found loop bwd start
+I20240818 18:17:28.186177 480386 StaCheck.cc:172] found loop bwd end
+I20240818 18:17:28.186180 480386 StaSlewPropagation.cc:266] slew propagation start
+E20240818 18:17:28.187034 480497 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240818 18:17:28.187134 480497 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240818 18:17:28.187144 480497 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240818 18:17:28.187153 480497 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240818 18:17:28.187224 480497 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240818 18:17:28.187232 480497 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240818 18:17:28.187240 480497 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240818 18:17:28.187248 480497 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240818 18:17:28.187316 480497 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+E20240818 18:17:28.187325 480497 Lib.cc:174] Warning: val outside table ranges:  val = 0; min_val = 0.00117378; max_val = 0.198535
+I20240818 18:17:28.188246 480386 StaSlewPropagation.cc:305] slew propagation end
+I20240818 18:17:28.188257 480386 StaDelayPropagation.cc:268] delay propagation start
+I20240818 18:17:28.189738 480386 StaDelayPropagation.cc:309] delay propagation end
+I20240818 18:17:28.189754 480386 StaClockPropagation.cc:322] propagated(kNormal) clock propagation start
+I20240818 18:17:28.189761 480386 StaClockPropagation.cc:418] propagated(kNormal) clock propagation end
+I20240818 18:17:28.189765 480386 StaApplySdc.cc:694] apply sdc start
+I20240818 18:17:28.189769 480386 StaApplySdc.cc:725] apply sdc end
+I20240818 18:17:28.189771 480386 StaClockPropagation.cc:324] propagated(kGenerated) clock propagation start
+I20240818 18:17:28.189774 480386 StaClockPropagation.cc:420] propagated(kGenerated) clock propagation end
+I20240818 18:17:28.189776 480386 StaApplySdc.cc:694] apply sdc start
+I20240818 18:17:28.189779 480386 StaApplySdc.cc:725] apply sdc end
+I20240818 18:17:28.189802 480386 StaBuildPropTag.cc:325] build propagation tag start
+I20240818 18:17:28.189813 480386 StaDataPropagation.cc:589] data fwd propagation start
+I20240818 18:17:28.190527 480559 StaDataPropagation.cc:529] Thread 139356589262400 date fwd propagate found start vertex.s[1]
+I20240818 18:17:28.190604 480559 StaDataPropagation.cc:529] Thread 139356589262400 date fwd propagate found start vertex.s[0]
+I20240818 18:17:28.190618 480559 StaDataPropagation.cc:529] Thread 139356589262400 date fwd propagate found start vertex.a[5]
+I20240818 18:17:28.190626 480559 StaDataPropagation.cc:529] Thread 139356589262400 date fwd propagate found start vertex.a[7]
+I20240818 18:17:28.190634 480559 StaDataPropagation.cc:529] Thread 139356589262400 date fwd propagate found start vertex.a[1]
+I20240818 18:17:28.190629 480560 StaDataPropagation.cc:529] Thread 139356599748160 date fwd propagate found start vertex.a[4]
+I20240818 18:17:28.190652 480559 StaDataPropagation.cc:529] Thread 139356589262400 date fwd propagate found start vertex.a[3]
+I20240818 18:17:28.190672 480560 StaDataPropagation.cc:529] Thread 139356599748160 date fwd propagate found start vertex.a[6]
+I20240818 18:17:28.190691 480560 StaDataPropagation.cc:529] Thread 139356599748160 date fwd propagate found start vertex.a[0]
+I20240818 18:17:28.190707 480560 StaDataPropagation.cc:529] Thread 139356599748160 date fwd propagate found start vertex.a[2]
+I20240818 18:17:28.190881 480386 StaDataPropagation.cc:632] data fwd propagation end
+I20240818 18:17:28.190888 480386 StaDataPropagation.cc:589] data fwd propagation start
+I20240818 18:17:28.191767 480386 StaDataPropagation.cc:632] data fwd propagation end
+I20240818 18:17:28.191776 480386 StaAnalyze.cc:539] analyze timing path start
+E20240818 18:17:28.191782 480386 StaAnalyze.cc:324] The output port y[0] is not constrained
+E20240818 18:17:28.191787 480386 StaAnalyze.cc:324] The output port y[0] is not constrained
+E20240818 18:17:28.191790 480386 StaAnalyze.cc:324] The output port y[1] is not constrained
+E20240818 18:17:28.191793 480386 StaAnalyze.cc:324] The output port y[1] is not constrained
+I20240818 18:17:28.191795 480386 StaAnalyze.cc:577] analyze timing path end
+I20240818 18:17:28.191799 480386 StaApplySdc.cc:694] apply sdc start
+I20240818 18:17:28.191805 480386 StaApplySdc.cc:725] apply sdc end
+I20240818 18:17:28.191808 480386 StaDataPropagation.cc:635] data bwd propagation start
+I20240818 18:17:28.192674 480386 StaDataPropagation.cc:670] data bwd propagation end
+I20240818 18:17:28.192684 480386 Sta.cc:2316] update timing end
+I20240818 18:17:28.192771 480386 Sta.cc:2410] start write sta report.
+I20240818 18:17:28.192775 480386 Sta.cc:2411] output sta report path: /home/jinghanhui/verilogtest/mustdo/ex1sta/result/top-500MHz
+I20240818 18:17:28.192920 480386 Sta.cc:1390] 
++----------+-------------+------------+------------+---------------+------+-------+-----------+
+| Endpoint | Clock Group | Delay Type | Path Delay | Path Required | CPPR | Slack | Freq(MHz) |
++----------+-------------+------------+------------+---------------+------+-------+-----------+
+I20240818 18:17:28.192950 480386 Sta.cc:1391] 
++-------+------------+-----+
+| Clock | Delay Type | TNS |
++-------+------------+-----+
+I20240818 18:17:28.193748 480386 NetlistWriter.cc:52] start write verilog file /home/jinghanhui/verilogtest/mustdo/ex1sta/result/top-500MHz/top.v
+I20240818 18:17:28.194052 480386 NetlistWriter.cc:71] finish write verilog file /home/jinghanhui/verilogtest/mustdo/ex1sta/result/top-500MHz/top.v
+I20240818 18:17:28.194064 480386 Sta.cc:2495] The timing engine run success.

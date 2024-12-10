@@ -1,0 +1,23 @@
+
+15. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Warning: Wire top.\SEG0 [7] is used but has no driver.
+Warning: Wire top.\SEG0 [6] is used but has no driver.
+Warning: Wire top.\SEG0 [5] is used but has no driver.
+Warning: Wire top.\SEG0 [4] is used but has no driver.
+Warning: Wire top.\SEG0 [3] is used but has no driver.
+Warning: Wire top.\SEG0 [2] is used but has no driver.
+Warning: Wire top.\SEG0 [1] is used but has no driver.
+Warning: Wire top.\SEG0 [0] is used but has no driver.
+Warning: Wire top.\SEG [6] is used but has no driver.
+Warning: Wire top.\SEG [5] is used but has no driver.
+Warning: Wire top.\SEG [4] is used but has no driver.
+Warning: Wire top.\SEG [3] is used but has no driver.
+Warning: Wire top.\SEG [2] is used but has no driver.
+Warning: Wire top.\SEG [1] is used but has no driver.
+Warning: Wire top.\SEG [0] is used but has no driver.
+Warning: Wire top.\LD4 is used but has no driver.
+Warning: Wire top.\LD [2] is used but has no driver.
+Warning: Wire top.\LD [1] is used but has no driver.
+Warning: Wire top.\LD [0] is used but has no driver.
+Found and reported 19 problems.

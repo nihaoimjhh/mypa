@@ -1,0 +1,90 @@
+
+16. Printing statistics.
+
+=== $paramod$7c4142ec5efe02ac2b641912058d7ad3c8e770b6\MuxKey ===
+
+   Number of wires:                  4
+   Number of wire bits:             21
+   Number of public wires:           3
+   Number of public wire bits:      20
+   Number of ports:                  3
+   Number of port bits:             20
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $paramod$c44997bd4209540e6eefebce7e7612707e0ddf71\MuxKeyInternal      1
+     LOGIC0_X1                       1
+
+   Area for cell type $paramod$c44997bd4209540e6eefebce7e7612707e0ddf71\MuxKeyInternal is unknown!
+
+   Chip area for module '$paramod$7c4142ec5efe02ac2b641912058d7ad3c8e770b6\MuxKey': 0.532000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== $paramod$c44997bd4209540e6eefebce7e7612707e0ddf71\MuxKeyInternal ===
+
+   Number of wires:                 40
+   Number of wire bits:             58
+   Number of public wires:           4
+   Number of public wire bits:      22
+   Number of ports:                  4
+   Number of port bits:             22
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 38
+     BUF_X1                         20
+     NAND3_X1                        8
+     NAND4_X1                        2
+     XNOR2_X2                        8
+
+   Chip area for module '$paramod$c44997bd4209540e6eefebce7e7612707e0ddf71\MuxKeyInternal': 48.412000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== top ===
+
+   Number of wires:                  5
+   Number of wire bits:             14
+   Number of public wires:           3
+   Number of public wire bits:      12
+   Number of ports:                  3
+   Number of port bits:             12
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     $paramod$7c4142ec5efe02ac2b641912058d7ad3c8e770b6\MuxKey      1
+     LOGIC0_X1                       1
+     LOGIC1_X1                       1
+
+   Area for cell type $paramod$7c4142ec5efe02ac2b641912058d7ad3c8e770b6\MuxKey is unknown!
+
+   Chip area for module '\top': 1.064000
+     of which used for sequential elements: 0.000000 (0.00%)
+
+=== design hierarchy ===
+
+   top                               1
+     $paramod$7c4142ec5efe02ac2b641912058d7ad3c8e770b6\MuxKey      1
+       $paramod$c44997bd4209540e6eefebce7e7612707e0ddf71\MuxKeyInternal      1
+
+   Number of wires:                 49
+   Number of wire bits:             93
+   Number of public wires:          10
+   Number of public wire bits:      54
+   Number of ports:                 10
+   Number of port bits:             54
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 41
+     BUF_X1                         20
+     LOGIC0_X1                       2
+     LOGIC1_X1                       1
+     NAND3_X1                        8
+     NAND4_X1                        2
+     XNOR2_X2                        8
+
+   Chip area for top module '\top': 50.008000
+     of which used for sequential elements: 0.000000 (0.00%)
+

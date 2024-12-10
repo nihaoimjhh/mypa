@@ -1,0 +1,8 @@
+top = key_led
+
+SW (SW1,SW2,SW3,SW4)
+
+ledr0 (LD0)
+ledr1 (LD0)
+ledr2 (LD0)
+ledr3 (LD0)

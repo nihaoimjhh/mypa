@@ -1,0 +1,75 @@
+
+15. Executing CHECK pass (checking for obvious problems).
+Checking module AND...
+Warning: Wire AND.\ld [6] is used but has no driver.
+Warning: Wire AND.\ld [5] is used but has no driver.
+Warning: Wire AND.\ld [4] is used but has no driver.
+Warning: Wire AND.\ld [3] is used but has no driver.
+Warning: Wire AND.\ld [2] is used but has no driver.
+Warning: Wire AND.\ld [1] is used but has no driver.
+Warning: Wire AND.\ld [0] is used but has no driver.
+Checking module EQ3...
+Warning: Wire EQ3.\LD [6] is used but has no driver.
+Warning: Wire EQ3.\LD [5] is used but has no driver.
+Warning: Wire EQ3.\LD [4] is used but has no driver.
+Warning: Wire EQ3.\LD [3] is used but has no driver.
+Warning: Wire EQ3.\LD [2] is used but has no driver.
+Warning: Wire EQ3.\LD [1] is used but has no driver.
+Warning: Wire EQ3.\LD [0] is used but has no driver.
+Checking module NOT...
+Warning: Wire NOT.\ld [6] is used but has no driver.
+Warning: Wire NOT.\ld [5] is used but has no driver.
+Warning: Wire NOT.\ld [4] is used but has no driver.
+Warning: Wire NOT.\ld [3] is used but has no driver.
+Warning: Wire NOT.\ld [2] is used but has no driver.
+Warning: Wire NOT.\ld [1] is used but has no driver.
+Warning: Wire NOT.\ld [0] is used but has no driver.
+Checking module OR...
+Warning: Wire OR.\ld [6] is used but has no driver.
+Warning: Wire OR.\ld [5] is used but has no driver.
+Warning: Wire OR.\ld [4] is used but has no driver.
+Warning: Wire OR.\ld [3] is used but has no driver.
+Warning: Wire OR.\ld [2] is used but has no driver.
+Warning: Wire OR.\ld [1] is used but has no driver.
+Warning: Wire OR.\ld [0] is used but has no driver.
+Checking module XOR...
+Warning: Wire XOR.\ld [6] is used but has no driver.
+Warning: Wire XOR.\ld [5] is used but has no driver.
+Warning: Wire XOR.\ld [4] is used but has no driver.
+Warning: Wire XOR.\ld [3] is used but has no driver.
+Warning: Wire XOR.\ld [2] is used but has no driver.
+Warning: Wire XOR.\ld [1] is used but has no driver.
+Warning: Wire XOR.\ld [0] is used but has no driver.
+Checking module add...
+Warning: Wire add.\LD [6] is used but has no driver.
+Warning: Wire add.\LD [5] is used but has no driver.
+Warning: Wire add.\LD [4] is used but has no driver.
+Warning: Wire add.\LD [3] is used but has no driver.
+Warning: Wire add.\LD [2] is used but has no driver.
+Warning: Wire add.\LD [1] is used but has no driver.
+Warning: Wire add.\LD [0] is used but has no driver.
+Warning: Wire add.$auto$hilomap.cc:47:hilomap_worker$756 is used but has no driver.
+Checking module add1...
+Warning: Wire add1.\sum is used but has no driver.
+Warning: Wire add1.\cout is used but has no driver.
+Checking module compare...
+Warning: Wire compare.\LD [6] is used but has no driver.
+Warning: Wire compare.\LD [5] is used but has no driver.
+Warning: Wire compare.\LD [4] is used but has no driver.
+Warning: Wire compare.\LD [3] is used but has no driver.
+Warning: Wire compare.\LD [2] is used but has no driver.
+Warning: Wire compare.\LD [1] is used but has no driver.
+Warning: Wire compare.\LD [0] is used but has no driver.
+Checking module subtraction...
+Warning: Wire subtraction.$auto$hilomap.cc:39:hilomap_worker$758 is used but has no driver.
+Warning: Wire subtraction.\SW0s[2] is used but has no driver.
+Warning: Wire subtraction.\SW0s[1] is used but has no driver.
+Checking module top...
+Warning: Wire top.\LD [6] is used but has no driver.
+Warning: Wire top.\LD [5] is used but has no driver.
+Warning: Wire top.\LD [4] is used but has no driver.
+Warning: Wire top.\LD [3] is used but has no driver.
+Warning: Wire top.\LD [2] is used but has no driver.
+Warning: Wire top.\LD [1] is used but has no driver.
+Warning: Wire top.\LD [0] is used but has no driver.
+Found and reported 62 problems.

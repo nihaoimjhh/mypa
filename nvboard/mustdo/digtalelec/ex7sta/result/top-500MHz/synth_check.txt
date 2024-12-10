@@ -1,0 +1,26 @@
+
+15. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Warning: Wire top.\out [7] is used but has no driver.
+Warning: Wire top.\out [6] is used but has no driver.
+Warning: Wire top.\out [5] is used but has no driver.
+Warning: Wire top.\out [4] is used but has no driver.
+Warning: Wire top.\out [3] is used but has no driver.
+Warning: Wire top.\out [2] is used but has no driver.
+Warning: Wire top.\out [1] is used but has no driver.
+Warning: Wire top.\out [0] is used but has no driver.
+Warning: Wire top.\hex_low [6] is used but has no driver.
+Warning: Wire top.\hex_low [5] is used but has no driver.
+Warning: Wire top.\hex_low [4] is used but has no driver.
+Warning: Wire top.\hex_low [3] is used but has no driver.
+Warning: Wire top.\hex_low [2] is used but has no driver.
+Warning: Wire top.\hex_low [1] is used but has no driver.
+Warning: Wire top.\hex_low [0] is used but has no driver.
+Warning: Wire top.\hex_high [6] is used but has no driver.
+Warning: Wire top.\hex_high [5] is used but has no driver.
+Warning: Wire top.\hex_high [4] is used but has no driver.
+Warning: Wire top.\hex_high [3] is used but has no driver.
+Warning: Wire top.\hex_high [2] is used but has no driver.
+Warning: Wire top.\hex_high [1] is used but has no driver.
+Warning: Wire top.\hex_high [0] is used but has no driver.
+Found and reported 22 problems.
